@@ -148,6 +148,7 @@ body {
   .about .row .content p b span {
     font-size: 2rem;
   }
+
   .layanan .row {
     flex-direction: column;
   }
@@ -257,7 +258,8 @@ body {
 }
 
 .layanan {
-  padding: 8rem 4% 1.1rem;
+  padding: 10rem 4% 1.1rem;
+  margin-top: 6rem;
   margin-top: 2rem;
   color: #075d96;
   /* border: 1px solid; */
