@@ -288,7 +288,7 @@ body {
   line-height: 2rem;
 }
 .about .content p span {
-  color: #b6895b;
+  color: var(--primary);
   font-size: 1.1rem;
 }
 
@@ -487,12 +487,21 @@ body {
   color: var(--colormain);
   margin-left: 2rem;
 }
+.contact .row .content .colmn {
+  padding: 1rem;
+  /* border: 1px solid; */
+  display: flex;
+  /* margin: 1rem; */
+}
+.contact .row .content .colmn h3 {
+  padding-left: 0.5rem;
+}
 .contact .content p {
   line-height: 2rem;
   margin-left: 1.6rem;
 }
 .contact .content p span {
-  color: #b6895b;
+  color: var(--primary);
   font-size: 1.1rem;
 }
 
