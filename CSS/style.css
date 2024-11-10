@@ -194,6 +194,16 @@ body {
     margin-left: 3rem;
     line-height: 2rem;
   }
+  .contact .row .content .colmn {
+    padding: 1rem;
+    /* border: 1px solid; */
+    display: flex;
+    /* margin: 1rem; */
+  }
+  .contact .row .content .colmn h3 {
+    margin-top: 0.5rem;
+    border: #075d96;
+  }
 }
 
 /* end display mobile */
