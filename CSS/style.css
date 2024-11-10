@@ -142,6 +142,7 @@ body {
   .about .row .content h3 {
     font-size: 2rem;
   }
+
   .about .row .content p {
     line-height: 3rem;
     font-size: 1.5rem;
@@ -274,9 +275,13 @@ body {
 }
 .about h2 span {
   color: var(--primary);
+
   /* font-size: 100px; */
 }
-
+.about .row .content h3 span {
+  color: var(--primary);
+  font-size: 1.3rem;
+}
 .about .row {
   display: flex;
 }
