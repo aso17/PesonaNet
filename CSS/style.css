@@ -278,10 +278,7 @@ body {
 
   /* font-size: 100px; */
 }
-.about .row .content h3 span {
-  color: var(--primary);
-  font-size: 1.3rem;
-}
+
 .about .row {
   display: flex;
 }
