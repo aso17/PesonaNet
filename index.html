@@ -1,329 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="layanan internet wilayah Tangerang" />
-    <meta name="keywords" content="pesonamedia,layanan internet" />
-    <meta name="author" content="pesonamedianet" />
-    <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      rel="stylesheet"
-    />
-    <!-- Style -->
-    <!-- <link
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="layanan internet wilayah Tangerang" />
+  <meta name="keywords" content="pesonamedia,layanan internet" />
+  <meta name="author" content="pesonamedianet" />
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    rel="stylesheet" />
+  <!-- Style -->
+  <!-- <link
       rel="stylesheet"
       href="https://pesonamedia.net/WebPesonaNet/CSS/style.css"
     /> -->
-    <link rel="stylesheet" href="CSS/style.css" />
-    <link
-      rel="icon"
-      href="https://pesonamedia.net/WebPesonaNet/img/company.jpeg"
-      type="image/jpeg"
-      style="border-radius: 100px"
-    />
+  <link rel="stylesheet" href="CSS/style.css" />
+  <link rel="stylesheet" href="CSS/sideBar.css" />
+  <link rel="stylesheet" href="CSS/AboutMe.css" />
+  <!-- <link rel="icon" href="https://pesonamedia.net/WebPesonaNet/img/company.jpeg" type="image/jpeg"
+    style="border-radius: 100px" /> -->
+  <link rel="icon" href="img/logo.jpeg" type="image/jpeg" style="border-radius: 100px" />
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async=""
-      src="https://www.googletagmanager.com/gtag/js?id=G-7VQ8XW8695"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-7VQ8XW8695"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-      gtag("config", "G-7VQ8XW8695");
-    </script>
-    <!-- icon -->
-    <!-- <script src="https://unpkg.com/feather-icons"></script> -->
-    <title>pesona medianet</title>
-  </head>
-  <body>
+    gtag("config", "G-7VQ8XW8695");
+  </script>
+  <!-- icon -->
+  <!-- <script src="https://unpkg.com/feather-icons"></script> -->
+  <title>pesona medianet</title>
+</head>
+
+<body>
+
+  <header>
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <a href="#">PERSONAL</a>
+        <a href="#">ENTERPRISE</a>
+        <a href="#">TENTANG KAMI</a>
+      </div>
+      <div class="top-bar-actions">
+
+        <a href="#">PESONA MEDIANET</a>
+        <a href="#">MY ACCOUNT</a>
+
+      </div>
+    </div>
+
     <nav class="navbar">
-      <img src="img/hero.avif" alt="hero" />
+      <a href="#home" class="logo">
+        <img src="img/logo.png" alt="Logo Perusahaan">
+      </a>
 
-      <ul>
-        <li><a href="#home" class="linknav">Home</a></li>
-        <li><a href="#about">About</a></li>
+      <input type="checkbox" id="menu-toggle" aria-controls="nav-links" aria-expanded="false" />
+
+      <label class="toggle-menu" for="menu-toggle" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <ul id="nav-links" class="nav-links">
+        <li><a href="#home" class="linknav active">Home</a></li>
+        <li><a href="#about">Promo</a></li>
         <li><a href="#layanan">Layanan</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-
-      <div class="toggle-menu">
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
     </nav>
+  </header>
 
-    <!-- secsion star --> 
-    <section class="hero" id="home">
-      <main class="content">
-        <h1>Layanan Internet Tercepat dan <span>Hemat Biaya</span></h1>
-        <p class="scroll-animasi-1">
-          Selamat datang di PesonaNet, penyedia layanan internet berkualitas
-          untuk wilayah Tangerang dan sekitarnya
-        </p>
+  <section class="breadcrumb-section">
+    <div class="breadcrumb-container">
+      <a href="#">Home</a> / <span class="current-page">Landing Page</span>
+    </div>
+  </section>
 
-        <a
-          href="https://wa.me/6287825122645?text=%20Halo?%20Admin%20saya%20ingin%20berlangganan%20layanan%20Internet"
-          class="cta"
-          >Daftar Sekarang</a
-        >
-      </main>
-    </section>
-    <!-- secsion End -->
-    <!-- secsion About star -->
-    <section id="about" class="about scroll-animasi-2">
-      <h2>About <span>Me</span></h2>
-      <div class="row">
-        <div class="about-img">
-          <img
-            src="https://pesonamedia.net/WebPesonaNet/img/Aboutme.svg"
-            alt="about"
-          />
+  <section class="hero-slider">
+
+    <div class="slider-container">
+      <div class="slides-wrapper">
+
+        <div class="slider-item slider-slide" data-index="0">
+
+          <div class="slider-promo-left">
+            <div class="promo-text-content">
+              <h3>Daftar Sekarang, Nikmati Kecepatannya!</h3>
+              <p>Selamat datang di PesonaNet, penyedia layanan internet berkualitas untuk wilayah Tangerang dan
+                sekitarnya.</p>
+              <a href="#register" class="btn btn-primary-cta">Daftar Sekarang</a>
+            </div>
+          </div>
+
+          <div class="slider-item slider-box-red">
+            <h3>Semua Bisa Termasuk</h3>
+            <ul>
+              <li class="stagger-item"><span class="icon-checkmark">&#10003;</span> Mudah</li>
+              <li class="stagger-item"><span class="icon-checkmark">&#10003;</span> Cepat</li>
+              <li class="stagger-item"><span class="icon-checkmark">&#10003;</span> Hanya Satu</li>
+            </ul>
+            <p>Download <span id="counter-download">0</span>%</p>
+            <a href="#" class="btn btn-secondary">Rasakan Kecepatannya</a>
+          </div>
+
         </div>
-        <div class="content">
-          <h3>Pesona<span>Net</span></h3>
-          <p>
-            Pesonanet didirikan sejak tahun 2021 untuk memberikan akses internet
-            berkualitas dan terjangkau di wilayah Tangerang dan sekitar nya.
-          </p>
-          <p>
-            Mengutamakan kenyamanan pengguna dengan Infrastruktur fiber optik
-            yang memadai dan Tim teknisi berpengalaman, membuat
-            <b> Pesona<span>Net</span></b> menjadi pilihan utama dalam layanan
+
+        <div class="slider-item slider-slide" data-index="1">
+          <div class="slider-promo-left">
+            <img src="img/sideBar2.jpg" alt="Promo Gambar 2" class="slider-image">
+          </div>
+          <div class="slider-item slider-box-red">
+            <h3>Pilihan Terbaik</h3>
+            <ul>
+              <li class="stagger-item"><span class="icon-checkmark">&#10003;</span> Dukungan Cepat</li>
+              <li class="stagger-item"><span class="icon-checkmark">&#10003;</span> Harga Stabil</li>
+              <li class="stagger-item"><span class="icon-checkmark">&#10003;</span> Beragam Paket</li>
+            </ul>
+            <p>Uptime <span id="counter-uptime">0</span>%</p>
+            <a href="#" class="btn btn-secondary">Baca Selengkapnya</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="slider-controls">
+      <button class="prev-btn">&lt;</button>
+      <div class="dots-container">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+      </div>
+      <button class="next-btn">&gt;</button>
+    </div>
+
+
+
+  </section>
+  <div class="promo-grid-bottom">
+
+    <div class="slider-item slider-box-red promo-bottom-card">
+      <h3>Promo Diskon Awal</h3>
+      <ul>
+        <li><span class="icon-checkmark">&#10003;</span> Gratis Pemasangan</li>
+        <li><span class="icon-checkmark">&#10003;</span> Diskon 15% Bulan Pertama</li>
+        <li><span class="icon-checkmark">&#10003;</span> Jaminan 7 Hari Uang Kembali</li>
+      </ul>
+      <p>Berlaku hingga akhir bulan ini</p>
+      <a href="#" class="btn btn-secondary">Lihat Detail</a>
+    </div>
+
+    <div class="slider-item slider-box-red promo-bottom-card">
+      <h3>Layanan Terbaik</h3>
+      <ul>
+        <li><span class="icon-checkmark">&#10003;</span> Dukungan Teknis 24 Jam</li>
+        <li><span class="icon-checkmark">&#10003;</span> SLA 99.5% Uptime</li>
+        <li><span class="icon-checkmark">&#10003;</span> Upgrade Kecepatan Mudah</li>
+      </ul>
+      <p>Jaringan terpercaya dan stabil</p>
+      <a href="#" class="btn btn-secondary">Hubungi Kami</a>
+    </div>
+
+  </div>
+
+  </section>
+
+  <section id="about" class="about">
+    <h2>About <span>Us</span></h2>
+    <div class="row">
+      <div class="about-img">
+        <img src="img/logo.png" alt="about" />
+      </div>
+      <div class="content">
+        <h3>Pesona<span>Net</span></h3>
+        <div class="content-text-wrapper">
+          <p>PesonaNet didirikan sejak tahun 2021 untuk memberikan akses internet berkualitas dan terjangkau di wilayah
+            Tangerang dan sekitarnya. Mengutamakan kenyamanan pengguna dengan infrastruktur fiber optik yang memadai
+            dan tim teknisi berpengalaman, membuat <b>Pesona<span>Net</span></b> menjadi pilihan utama dalam layanan
             internet.
           </p>
+          <p><i>Visi: Menjadi penyedia layanan internet yang berkualitas</i></p>
+          <p><i>Misi: Mendengar dan menghargai pandangan para pelanggan. Selalu berinovasi dan mengimplementasikan
+              teknologi terbaru dalam setiap layanan</i></p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <p>
-            <i> Visi : Menjadi penyedia layanan internet yang berkualitas</i>
-          </p>
-          <p>
-            <i>
-              Misi : Mendengar dan menghargai pandangan para pelanggan. Selalu
-              berinovasi dan mengimplementasikan teknologi terbaru dalam setiap
-              layanan</i
-            >
-          </p>
-        </div>
+  <section id="layanan" class="layanan">
+    <h2>Laya<span>nan</span></h2>
+    <div class="row">
+      <div class="card">
+        <i data-feather="users"></i>
+        <h3>Monitoring</h3>
+        <p>Tim teknisi kami akan segera mendeteksi dan menangani setiap masalah yang mungkin terjadi pada jaringan Anda.
+        </p>
       </div>
-    </section>
-    <!-- secsion about End -->
+      <div class="card">
+        <i data-feather="bar-chart"></i>
+        <h3>Stabilitas</h3>
+        <p>Jaringan fiber optik yang kami miliki menawarkan stabilitas luar biasa dengan waktu operasional hingga 99,9%.
+        </p>
+      </div>
+      <div class="card">
+        <i data-feather="disc"></i>
+        <h3>Kapasitas</h3>
+        <p>Bandwidth yang lebih besar, tim kami siap melakukan upgrade sesuai dengan kebutuhan Anda.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="card">
+        <i data-feather="lock"></i>
+        <h3>Keamanan</h3>
+        <p>Kami menjamin keamanan jaringan hingga 99% dengan menggunakan teknologi terkini dan dikelola oleh teknisi
+          ahli dan profesional.</p>
+      </div>
+      <div class="card">
+        <i data-feather="radio"></i>
+        <h3>Hotspot Service</h3>
+        <p>Instalasi Hotspot untuk segala bidang usaha berlangganan personal ataupun perusahaan.</p>
+      </div>
+      <div class="card">
+        <i data-feather="phone-outgoing"></i>
+        <h3>Dukungan</h3>
+        <p>Kami memiliki Customer Care dan Pusat Operasi Jaringan yang selalu siap melayani Anda 24 jam sehari, 7 hari
+          seminggu.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- section Layanan-->
-    <section class="layanan scroll-animasi-3" id="layanan">
-      <h2>Laya<span>nan</span></h2>
-      <div class="row">
-        <div class="card">
-          <i data-feather="users"></i>
-          <h3>Monitoring</h3>
-          <p>
-            Tim teknisi kami akan segera mendeteksi dan menangani setiap masalah
-            yang mungkin terjadi pada jaringan Anda.
-          </p>
-        </div>
-        <div class="card" data-aos="fade-up">
-          <i data-feather="bar-chart"></i>
-          <h3>Stabilitas</h3>
-          <p>
-            Jaringan fiber optik yang kami miliki menawarkan stabilitas luar
-            biasa dengan waktu operasional hingga 99,9%.
-          </p>
-        </div>
-        <div class="card" data-aos="fade-up">
-          <i data-feather="disc"></i>
-          <h3>Kapasitas</h3>
-          <p>
-            Bandwidth yang lebih besar, tim kami siap melakukan upgrade sesuai
-            dengan kebutuhan Anda.
-          </p>
-        </div>
+  <section class="promo" id="promo">
+    <div class="row">
+      <h2>PROMO !!!</h2>
+      <div class="content">
+        <b>
+          <p>Bayar 6 Bulan Gratis 1 buah CCTV Ip Cam Bisa lihat situasi Rumah Dari Jarak Jauh</p>
+        </b>
       </div>
+      <div class="content">
+        <b>
+          <p>Harga Paket Tidak Berubah-ubah <i>(Flat)</i> Harga Sudah Termasuk Ppn 11%</p>
+        </b>
+      </div>
+    </div>
+  </section>
 
-      <div class="row scroll-animasi-4">
-        <div class="card" data-aos="fade-up">
-          <i data-feather="lock"></i>
-          <h3>Keamanan</h3>
-          <p>
-            Kami menjamin keamanan jaringan hingga 99% dengan menggunakan
-            teknologi terkini dan dikelola oleh teknisi ahli dan profesional.
-          </p>
-        </div>
-        <div class="card" data-aos="fade-up">
-          <i data-feather="radio"></i>
-          <h3>Hotspot Service</h3>
-          <p>
-            Installasi Hotspot untuk segala bidang usaha berlangganan personal
-            ataupun perusahaan
-          </p>
-        </div>
-        <div class="card" data-aos="fade-up">
-          <i data-feather="phone-outgoing"></i>
-          <h3>Dukungan</h3>
-          <p>
-            Kami memiliki Customer Care dan Pusat Operasi Jaringan yang selalu
-            siap melayani Anda 24 jam sehari, 7 hari seminggu.
-          </p>
-        </div>
+  <section class="ketentuan">
+    <h2>Syarat & Ketentuan</h2>
+    <div class="row">
+      <div class="content">
+        <ul class="list">
+          <li>Sertakan Foto KTP</li>
+          <li>Perangkat Dipinjamkan Selama Berlangganan</li>
+          <li>Tidak Untuk Dijual Kembali</li>
+          <li>Gratis Kabel 100m</li>
+        </ul>
       </div>
-    </section>
-    <!-- section Layanan End -->
-    <section class="paket" id="paket">
-      <h2>Daftar Harga</h2>
-      <!-- <h3 class="title">Biaya Pasang 150rb Langsung aktif</h3> -->
-      <div class="row">
-        <div class="cardPaket" data-aos="fade-up">
-          <div class="labelPaket">
-            <p>10 MBPS</p>
-          </div>
-          <div class="subCard">
-            <p>Rp165.000</p>
-          </div>
-        </div>
-        <div class="cardPaket" data-aos="fade-up">
-          <div class="labelPaket">
-            <p>20 MBPS</p>
-          </div>
-          <div class="subCard">
-            <p>Rp220.000</p>
-          </div>
-        </div>
-        <div class="cardPaket" data-aos="fade-up">
-          <div class="labelPaket">
-            <p>30 MBPS</p>
-          </div>
-          <div class="subCard">
-            <p>Rp280.000</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="cardPaket" data-aos="fade-up">
-          <div class="labelPaket">
-            <p>40 MBPS</p>
-          </div>
-          <div class="subCard">
-            <p>Rp350.000</p>
-          </div>
-        </div>
-        <div class="cardPaket" data-aos="fade-up">
-          <div class="labelPaket">
-            <p>50 MBPS</p>
-          </div>
-          <div class="subCard">
-            <p>Rp435.000</p>
-          </div>
-        </div>
-        <div class="cardPaket" data-aos="fade-up">
-          <div class="labelPaket">
-            <p>100 MBPS</p>
-          </div>
-          <div class="subCard">
-            <p>Rp825.000</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="promo" id="promo">
-      <div class="row">
-        <h2>PROMO !!!</h2>
-        <div class="content">
-          <b>
-            <p>
-              Bayar 6 Bulan Gratis 1 buah CCTV Ip Cam Bisa lihat situasi Rumah
-              Dari Jarak Jauh
-            </p></b
-          >
-        </div>
-        <div class="content">
-          <b>
-            <p>
-              Harga Paket Tidak Berubah-ubah <i>(Flat)</i> Harga Sudah Termasuk
-              Ppn 11%
-            </p></b
-          >
-        </div>
+  <section id="contact" class="contact">
+    <h2>Cont<span>act</span></h2>
+    <div class="row">
+      <div class="contact-img">
+        <img src="https://pesonamedia.net/WebPesonaNet/img/Contact.svg" alt="about" />
       </div>
-    </section>
-
-    <section class="ketentuan scroll-animasi-5">
-      <h2>Syarat & Ketentuan</h2>
-      <div class="row">
-        <div class="content" data-aos="fade-left" data-aos-duration="500">
-          <ul class="list">
-            <li>Sertakan Foto KTP</li>
-            <li>Perangkat Dipinjamkan Selama Berlangganan</li>
-            <li>Tidak Untuk Dijual Kembali</li>
-            <li>Gratis Kabel 100m</li>
-          </ul>
+      <div class="content">
+        <div class="colmn">
+          <i data-feather="mail"></i>
+          <h3>Email</h3>
         </div>
+        <p>admin@pesonamedia.net</p>
+
+        <div class="colmn">
+          <i data-feather="phone-call"></i>
+          <h3>Telpon</h3>
+        </div>
+        <p>+62-878-251-226-45</p>
+        <div class="colmn">
+          <i data-feather="map-pin"></i>
+          <h3>Alamat</h3>
+        </div>
+        <p>Jl. Kp Peusar RT. 005/001 Kel. Binong kec. Curug Kab. Tangerang - Banten</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- section contact start -->
-    <section id="contact" class="contact scroll-animasi-6">
-      <h2>Cont<span>act</span></h2>
-      <div class="row">
-        <div class="contact-img" data-aos="fade-up">
-          <img
-            src="https://pesonamedia.net/WebPesonaNet/img/Contact.svg"
-            alt="about"
-          />
-        </div>
-        <div class="content" data-aos="fade-left" data-aos-duration="500">
-          <div class="colmn">
-            <i data-feather="mail"></i>
-            <h3>Email</h3>
-          </div>
-          <p>admin@pesonamedia.net</p>
-
-          <div class="colmn">
-            <i data-feather="phone-call"></i>
-            <h3>Telpon</h3>
-          </div>
-          <p>+62-878-251-226-45</p>
-          <div class="colmn">
-            <i data-feather="map-pin"></i>
-            <h3>Alamat</h3>
-          </div>
-          <p>
-            Jl. Kp Peusar RT. 005/001 Kel. Binong kec. Curug Kab. Tangerang -
-            Banten
-          </p>
-        </div>
+  <footer class="footer">
+    <div class="rowFoot">
+      <div class="footCopy">
+        <p>Copyright &copy; PT. Pesona Network Mediatama</p>
       </div>
-    </section>
-    <!-- section contact End -->
-    <section class="footer">
-      <div class="rowFoot">
-        <div class="footCopy">
-          <p>Copyright &copy; PT. Pesona Network Mediatama</p>
-        </div>
-        <div class="footWa">
-          <a
-            class="linkWa"
-            href="https://wa.me/6287825122645?text=%20Halo?%20Admin%20saya%20ingin%20berlangganan%20layanan%20Internet"
-          >
-            <img
-              class="iconWa"
-              src="https://pesonamedia.net/WebPesonaNet/img//iconwhatsapp.gif"
-              alt="iconWa"
-            />
-            Chat Whatsapp
-          </a>
-        </div>
+      <div class="footWa">
+        <a class="linkWa"
+          href="https://wa.me/6287825122645?text=%20Halo?%20Admin%20saya%20ingin%20berlangganan%20layanan%20Internet">
+          <img class="iconWa" src="https://pesonamedia.net/WebPesonaNet/img//iconwhatsapp.gif" alt="iconWa" />
+          Chat Whatsapp
+        </a>
       </div>
-    </section>
+    </div>
+  </footer>
 
-    <script src="/js/script.js"></script>
-  </body>
+  <script src="/js/script.js"></script>
+  <script src="/js/sideBar.js"></script>
+</body>
+
 </html>

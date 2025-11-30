@@ -1,0 +1,134 @@
+.about h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Garis bawah Judul Section (Gradient Biru) */
+.about h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--primary-gradient);
+    border-radius: 2px;
+}
+
+.about h2 span {
+    color: var(--primary-blue);
+}
+
+.about .row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    /* PERBAIKAN: Ubah default ke 'wrap' agar flexbox bisa menumpuk di mobile */
+    flex-wrap: wrap;
+    padding: 0 10px;
+    width: 100%;
+}
+
+.about-img {
+    flex: 0 0 45%;
+}
+
+.about-img img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px #fff;
+}
+
+.about .content {
+    flex: 1 1 55%;
+}
+
+.about .content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+
+/* ================================== */
+/* 📱 MEDIA QUERY: TABLET DAN MOBILE (768px kebawah) */
+/* ================================== */
+
+@media (max-width: 768px) {
+
+    .about .row {
+        /* KUNCI: Aktifkan penumpukan untuk mobile (2 Row) */
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        /* Berikan jarak yang cukup */
+        justify-content: center;
+        /* Tengahkankan item saat menumpuk */
+        overflow-x: hidden;
+        /* Pastikan tidak ada scroll horizontal */
+        padding: 0 20px;
+    }
+
+    .about-img,
+    .about .content {
+        /* Ambil hampir lebar penuh (90%) untuk memaksa turun ke baris baru */
+        flex: 0 0 90%;
+        max-width: 90%;
+        min-width: auto;
+        /* Hilangkan batasan min-width yang keras */
+        padding: 0;
+        margin: 0;
+    }
+
+    .about-img {
+        order: 0;
+        /* Gambar selalu di atas */
+        text-align: center;
+        border: none;
+    }
+
+    .about .content {
+        order: 1;
+        /* Teks selalu di bawah */
+        font-size: 0.9rem;
+    }
+
+    .about .content h3 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}
+
+/* ======================================================== */
+/* 🚨 MEDIA QUERY: MOBILE SANGAT KECIL (450px kebawah) */
+/* ======================================================== */
+
+@media (max-width: 450px) {
+    .about h2 {
+        font-size: 1.8rem;
+    }
+
+    .about .row {
+        gap: 1rem;
+        padding: 0 15px;
+    }
+
+    .about-img img {
+        /* Pastikan gambar tidak terlalu besar */
+        max-width: 80%;
+    }
+
+    .about .content {
+        font-size: 0.8rem;
+        word-break: break-word;
+        /* Memastikan teks bisa di-wrap */
+    }
+
+    .about .content h3 {
+        font-size: 1.3rem;
+    }
+}

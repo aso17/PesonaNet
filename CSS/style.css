@@ -1,739 +1,639 @@
+/* ======================== */
+/* 🚀 VARIABEL & RESET GLOBAL (Gaya PesonaNet: Biru & Putih) */
+/* ======================== */
 :root {
-  --primary: #f7af32;
-  --bg: #fff;
-  --colormain: #075d96;
+  /* Palet Warna Biru & Putih */
+  --primary-blue: #007bff;
+  /* Biru Primer Solid */
+  --primary-gradient: linear-gradient(to right, #007bff, #00c7e5);
+  /* Gradient Biru */
+  --secondary-color: #0056b3;
+  /* Biru Sekunder lebih gelap */
+  --text-color-primary: #212529;
+  /* Hitam Hampir Penuh */
+  --text-color-light: #6c757d;
+  /* Abu-abu untuk Subteks */
+  --bg-color-light: #ffffff;
+  /* Latar Belakang Putih */
+  --bg-color-soft: #f8f8f8;
+  /* Latar Belakang Sangat Terang */
+  --shadow-color: rgba(0, 0, 0, 0.12);
+  /* Bayangan Halus */
+  --border-color-light: #eeeeee;
+  /* Warna Garis Pemisah */
+  --top-bar-height: 35px;
+  /* Tinggi Top Bar */
+  --nav-height-desktop: 70px;
+  /* Tinggi Navbar Utama di Desktop */
+  --nav-height-mobile: 60px;
+  /* Tinggi Navbar Utama di Mobile */
 }
 
+/* Reset dan Font */
 * {
-  font-family: "poppins", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: none;
-  border: none;
+  font-family: 'Poppins', sans-serif;
   text-decoration: none;
+  line-height: 1.6;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: "poppins", sans-serif;
-  background-color: var(--bg);
-  color: #fff;
-  /* height: 2000px; */
+  background-color: var(--bg-color-soft);
+  color: var(--text-color-primary);
+  min-height: 100vh;
 }
 
-/* style Navbar#ecdfdf; */
+section {
+  padding: 5rem 7%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-.navbar {
-  width: 100%;
+/* ======================== */
+/* 1. TOP BAR STYLING */
+/* ======================== */
+
+.top-bar {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+  height: var(--top-bar-height);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 5%;
-  /* background-color: #ece5de; */
-  background-image: linear-gradient(rgb(214, 202, 202), rgb(241, 241, 226));
-
-  height: 100px;
+  padding: 0 7%;
+  font-size: 0.8em;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--border-color-light);
 }
 
-.navbar ul {
+.top-bar a {
+  color: var(--text-color-light);
+  margin-right: 15px;
+  transition: color 0.2s;
+}
+
+.top-bar a:hover {
+  color: var(--primary-blue);
+}
+
+.top-bar-actions .flag {
+  height: 12px;
+  margin-right: 5px;
+}
+
+/* ======================== */
+/* 2. MAIN NAVBAR STYLING (DESKTOP) */
+/* ======================== */
+
+header {
+  background: var(--bg-color-light);
+  box-shadow: 0 2px 4px var(--shadow-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* Tinggi total header di desktop */
+  height: calc(var(--top-bar-height) + var(--nav-height-desktop));
+}
+
+.navbar {
   display: flex;
-  list-style: none;
-  width: 40%;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: var(--nav-height-desktop);
+  padding: 0 7%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.navbar ul li a {
-  text-decoration: none;
-  color: #075d96;
-  font-size: 20px;
+.navbar .logo img {
+  height: 60px;
+  transition: transform 0.3s ease;
 }
-.navbar img {
-  width: 25vh;
-  padding: 0;
+
+/* Navigasi Desktop (Normal State) */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  /* **PENTING**: Pastikan styling desktop normal */
+  transform: none;
+  visibility: visible;
+  transition: none;
+  /* Hilangkan transisi di desktop */
 }
-.navbar-logo {
-  font-size: 2rem;
+
+.nav-links li a {
+  color: var(--text-color-primary);
   font-weight: 500;
-  color: #fff;
-}
-.navbar-logo span {
-  color: var(--primary);
-  font-style: italic;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
+.nav-links li a:hover {
+  color: var(--primary-blue);
+}
+
+/* Garis Bawah Hover/Active */
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--primary-gradient);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+  width: 100%;
+}
+
+/* ======================== */
+/* 🍔 BURGER MENU STYLING */
+/* ======================== */
+
+/* Sembunyikan Checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Tombol hamburger disembunyikan di desktop */
 .toggle-menu {
   display: none;
-  flex-direction: column;
-  height: 20px;
-  justify-content: space-between;
-  position: relative;
-}
-.toggle-menu input {
-  position: absolute;
-  opacity: 0;
-  width: 50px;
-  height: 28px;
-  left: -7px;
   cursor: pointer;
-  z-index: 3;
+  z-index: 1002;
+  padding: 10px;
 }
-/* animation burger */
-.toggle-menu span:nth-child(2) {
-  transform-origin: 0 0;
-  transition: all 0.5s;
-}
-.toggle-menu input:checked ~ span:nth-child(2) {
-  transform: rotate(45deg) translate(-2px, -2px);
-  background-color: #075d96;
-}
-.toggle-menu span:nth-child(4) {
-  transition: all 0.5s;
-  transform-origin: 0 100%;
-}
-.toggle-menu input:checked ~ span:nth-child(4) {
-  background-color: #075d96;
-  transform: rotate(-45deg) translate(0px, 0px);
-}
-.toggle-menu input:checked ~ span:nth-child(3) {
-  opacity: 0;
-  transform: scale(0);
-}
+
 .toggle-menu span {
   display: block;
   width: 30px;
   height: 3px;
-  background-color: #075d96;
+  background-color: var(--text-color-primary);
   border-radius: 3px;
+  transition: all 0.4s;
+  margin: 6px 0;
+  transform-origin: 0 50%;
 }
 
-.linkWa {
-  background-color: #16d365;
-  display: flex;
-  width: 15%;
-  padding: 7px;
-  position: fixed;
-  top: 93%;
-  left: 80%;
-  border-radius: 2px;
-  margin: auto;
-  color: #fff;
-  font-size: 20px;
-  z-index: 2;
+/* Animasi Burger to 'X' */
+#menu-toggle:checked+.toggle-menu span:nth-child(1) {
+  transform: rotate(45deg) translate(2px, -1px);
+  background: var(--primary-gradient);
 }
-.iconWa {
-  border-radius: 100%;
+
+#menu-toggle:checked+.toggle-menu span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+#menu-toggle:checked+.toggle-menu span:nth-child(3) {
+  transform: rotate(-45deg) translate(2px, 1px);
+  background: var(--primary-gradient);
+}
+
+
+/* ======================== */
+/* 3. BREADCRUMB SECTION */
+/* ======================== */
+.breadcrumb-section {
+  background-color: var(--bg-color-soft);
+  padding: 10px 7%;
+  border-bottom: 1px solid var(--border-color-light);
+  font-size: 0.9em;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.breadcrumb-container a {
+  color: var(--text-color-light);
+  transition: color 0.2s;
+}
+
+.breadcrumb-container a:hover {
+  color: var(--primary-blue);
+}
+
+.current-page {
+  color: var(--text-color-primary);
+  font-weight: 600;
+}
+
+
+
+
+
+/* ======================== */
+/* 7. LAYANAN SECTION STYLING */
+/* ======================== */
+
+.layanan .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.layanan .card {
+  flex: 1 1 300px;
   text-align: center;
-  width: 30px;
-  margin-right: 2px;
+  padding: 2.5rem 1.5rem;
+  background: var(--bg-color-light);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px var(--shadow-color);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.hero {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  background-image: rgb(241, 241, 226);
-  min-height: 80vh;
+.layanan .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.hero::after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 20%;
-  bottom: 0;
-}
-.hero .content {
-  width: 100%;
-  padding: 1rem 5%;
-  max-width: 60rem;
-  height: fit-content;
-}
-.hero .content h1 {
-  font-size: 3.5em;
-  color: var(--colormain);
-  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
-  line-height: 1.2;
+.layanan .card i {
+  color: var(--primary-blue);
+  width: 45px;
+  height: 45px;
+  stroke-width: 2.5;
+  margin-bottom: 1rem;
 }
 
-.hero .content h1 span {
-  color: var(--primary);
+.layanan .card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--secondary-color);
 }
 
-.hero .content p {
-  font-size: 1.2rem;
-  margin-top: 1rem;
-  line-height: 1.4;
-  font-weight: 80rem;
-  color: var(--colormain);
-  font-weight: bold;
-  mix-blend-mode: difference saturation;
-}
-.hero .content .cta {
-  margin-top: 3rem;
-  display: inline-block;
-  padding: 1rem 3rem;
-  font-size: 1.4rem;
-  color: var(--colormain);
-  background-color: rgb(239, 234, 234);
-  border-radius: 0.5rem;
-  box-shadow: 4px 4px var(--primary);
-}
+/* ======================== */
+/* 8. PROMO SECTION STYLING */
+/* ======================== */
 
-/* section about */
-.about {
-  padding: 10rem 4% 1.1rem;
-  margin-top: 4rem;
-  width: 100%;
-  background-image: linear-gradient(rgb(214, 202, 202), rgb(241, 241, 226));
-}
-.about h2 {
+.promo {
+  background: var(--primary-gradient);
+  color: white;
   text-align: center;
-  font-size: 2.6rem;
-  margin-bottom: 3rem;
-  color: var(--colormain);
-}
-.about h2 span {
-  color: var(--primary);
+  padding: 3rem 7%;
 }
 
-.about .row {
+.promo h2 {
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.promo h2::after {
+  background-color: white !important;
+}
+
+.promo .row {
   display: flex;
-}
-.about .row .about-img {
-  flex: 1 1 35rem;
-}
-.about .row .about-img img {
-  width: 100%;
-  border-radius: 0 7.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
 
-.about .row .content {
-  flex: 1 1 35rem;
-  color: var(--colormain);
-  margin-left: 2rem;
+.promo .content {
+  flex: 1 1 400px;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 1.5rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-.about .content p {
-  line-height: 2rem;
+
+/* ======================== */
+/* 9. KETENTUAN SECTION STYLING */
+/* ======================== */
+
+.ketentuan h2 {
+  text-align: center;
+  color: var(--text-color-primary);
+  margin-bottom: 2rem;
 }
-.about .content p span {
-  color: var(--primary);
+
+.ketentuan .row {
+  display: flex;
+  justify-content: center;
+}
+
+.ketentuan .content {
+  max-width: 600px;
+  background-color: var(--bg-color-light);
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.ketentuan .list {
+  list-style: none;
+}
+
+.ketentuan .list li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 1rem;
   font-size: 1.1rem;
 }
 
-.layanan {
-  padding: 10rem 4% 1.1rem;
-  margin-top: 6rem;
-  margin-top: 2rem;
-  color: var(--colormain);
-  /* border: 1px solid; */
-  width: 100%;
-}
-.layanan .row {
-  display: flex;
-  align-items: center;
-}
-
-.layanan .row .card {
-  /* border: 1px solid; */
-  flex: 2;
-  height: 17rem;
-  /* width: 80%; */
-  padding: 2rem;
-  margin: 1rem;
-  background: linear-gradient(rgb(214, 202, 202), rgb(241, 241, 226));
-}
-.layanan h2 {
-  text-align: center;
-  font-size: 2.6rem;
-  margin-bottom: 3rem;
-  color: var(--colormain);
-}
-.layanan h2 span {
-  color: var(--primary);
-}
-.layanan .row .card h3 {
-  text-align: center;
-  padding: 1rem;
-  border-bottom: 0.1rem solid var(--primary);
-}
-.layanan .row .card h3:hover {
-  border-bottom: 0.1rem solid var(--primary);
-}
-.layanan .row .card:hover {
-  border: 1rem solid var(--colormain);
-  transform: scaleY(1);
-  transition: 0.2s linear;
-}
-.layanan .row .card p {
-  margin-top: 1rem;
-  line-height: 2rem;
-}
-
-/* paket */
-.paket {
-  padding: 1em 4% 1.1rem;
-  margin-top: 1rem;
-  color: var(--colormain);
-
-  text-align: center;
-}
-.paket .row {
-  display: flex;
-
-  align-items: baseline;
-  align-items: center;
-}
-.paket .title {
-  font-family: "poppins", sans-serif;
-  font-size: 1.2rem;
-  width: 25rem;
-  padding: 1rem;
-  text-align: center;
-  margin: auto;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
+.ketentuan .list li::before {
+  content: '\2022';
+  color: var(--primary-blue);
   font-weight: bold;
-  border-bottom: 1px solid var(--primary);
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
-.paket .row .cardPaket {
-  border: 1px solid;
-  flex: 2;
-  border-radius: 0 0 4.2rem;
-  padding: 1rem;
-  margin: 1rem;
-  display: flex;
-  background-color: #fff;
-}
-.paket .row .cardPaket:hover {
-  background: linear-gradient(rgb(214, 202, 202), rgb(241, 241, 226));
-}
-.paket .row .cardPaket .labelPaket {
-  flex: 1;
-  padding: 1rem;
 
-  border-radius: 0 2.2rem 2.2rem 0;
-  background-color: var(--colormain);
-  color: #fff;
-}
-.paket .row .cardPaket .subCard {
-  flex: 2;
-  padding: 1rem;
-}
-.promo {
-  width: 100%;
-}
-.promo h2 {
-  text-align: center;
-  color: var(--primary);
-}
-.promo .row {
-  display: flex;
-  color: var(--colormain);
-  flex-direction: column;
-  width: 60rem;
-  margin: auto;
-}
-.promo .row .content {
-  text-align: center;
-}
-/* style ketentuan start */
 
-/* style ketentuan end */
-.ketentuan {
-  padding: 2rem 4% 1.1rem;
-  color: var(--colormain);
-}
-.ketentuan .row {
-  display: flex;
-}
-.ketentuan .row .content {
-  /* border: 1px #000 solid; */
-  flex: 1;
-}
-.ketentuan .row .content .list {
-  margin-left: 1.3rem;
-}
-.ketentuan .row .content .list li {
-  list-style: square;
-}
-.ketentuan .row .img {
-  flex: 0.5;
-  text-align: end;
-}
-.ketentuan .row .img h4 {
-  text-align: center;
-}
-.ketentuan .row .img img {
-  width: 10rem;
-}
-/* section contact */
-.contact {
-  padding: 4rem 4% 1.1rem;
-  margin-top: 3rem;
-  background-image: linear-gradient(rgb(214, 202, 202), rgb(241, 241, 226));
-}
-.contact h2 {
-  text-align: center;
-  font-size: 2.6rem;
-  margin-bottom: 3rem;
-  color: var(--colormain);
-}
-.contact h2 span {
-  color: var(--primary);
-  /* font-size: 100px; */
-}
+/* ======================== */
+/* 10. CONTACT SECTION STYLING */
+/* ======================== */
 
 .contact .row {
   display: flex;
-}
-.contact .row .contact-img {
-  flex: 1 1 35rem;
-}
-.contact .row .contact-img img {
-  width: 100%;
-  border-radius: 0 7.2rem;
-  filter: drop-shadow(0px 0px 12px rgb(221, 193, 193));
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
 }
 
-.contact .row .content {
-  flex: 1 1 35rem;
-  color: var(--colormain);
-  margin-left: 2rem;
-}
-.contact .row .content .colmn {
-  padding: 1rem;
-  display: flex;
-}
-.contact .row .content .colmn h3 {
-  padding-left: 0.5rem;
-}
-.contact .content p {
-  line-height: 2rem;
-  margin-left: 1.6rem;
-}
-.contact .content p span {
-  color: var(--primary);
-  font-size: 1.1rem;
-}
-.footer {
-  padding: 1rem 4% 1.1rem;
+.contact-img {
+  flex: 1 1 350px;
   text-align: center;
-  color: var(--colormain);
-}
-.rowFoot {
-  display: flex;
-}
-.rowFoot .footCopy {
-  text-align: center;
-  flex: 1;
 }
 
-.footer .rowFoot .footWa .linkWa {
-  background-color: #16d365;
-  display: flex;
-  width: 15%;
-  padding: 7px;
-  border: 2px solid;
-  position: fixed;
-  top: 93%;
-  text-align: center;
-  left: 75%;
+.contact-img img {
+  max-width: 100%;
+  height: auto;
   border-radius: 10px;
-  margin: auto;
-  color: #fff;
-  font-size: 15px;
-  z-index: 2;
-}
-.iconWa {
-  border-radius: 100%;
-  text-align: end;
-  width: 30px;
-}
-/* laptop */
-@media (max-width: 1366px) {
-  html {
-    font-size: 75%;
-  }
 }
 
-/* tablet */
-@media (max-width: 750px) {
+.contact .content {
+  flex: 1 1 450px;
+  background: var(--bg-color-light);
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.contact .colmn {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.contact .colmn i {
+  color: var(--primary-blue);
+  width: 28px;
+  height: 28px;
+  margin-right: 15px;
+  stroke-width: 2.5;
+}
+
+.contact .content h3 {
+  font-size: 1.4rem;
+  color: var(--secondary-color);
+}
+
+.contact .content p {
+  margin-left: 43px;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ======================== */
+/* 11. FOOTER STYLING */
+/* ======================== */
+
+.footer {
+  background-color: var(--text-color-primary);
+  padding: 1.5rem 7%;
+  color: white;
+}
+
+.footer .rowFoot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer .footCopy p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.footer .footWa {
+  margin-top: 10px;
+}
+
+.footer .linkWa {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  background-color: #25d366;
+  padding: 8px 15px;
+  border-radius: 50px;
+  transition: background-color 0.3s;
+}
+
+.footer .linkWa:hover {
+  background-color: #128c7e;
+}
+
+.footer .iconWa {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+/* ======================== */
+/* 📱 MEDIA QUERY (MOBILE RESPONSIVE) */
+/* ======================== */
+
+@media (max-width: 992px) {
   html {
-    font-size: 62.5%;
+    font-size: 90%;
   }
-  .navbar ul {
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin-top: 3em;
-    /* width: 50%; */
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 50vh;
-    align-items: center;
-    z-index: 2;
-    background-color: rgba(221, 211, 211, 0.5);
-    transform: translateY(100%);
-    transition: all 0.5s;
-    opacity: 0;
+
+  section {
+    padding: 4rem 4%;
   }
-  .navbar .slide {
-    transform: translateY(0);
-    transition: all 0.5s;
-    opacity: 1;
+
+  .top-bar {
+    padding: 0 4%;
   }
-  .navbar ul a {
-    font-size: 1.4em !important;
-  }
-  .navbar .toggle-menu {
-    display: flex;
-    /* overflow-x: hidden; */
-  }
+
   .navbar {
-    width: 100%;
+    padding: 0 4%;
   }
 
-  .navbar img {
-    width: 19vh;
-    padding: 1px;
-  }
-  .hero {
-    /* margin-top: 8em; */
-    width: 100%;
-    min-height: 40vh;
-    margin-top: 4em;
-  }
-  .about .row {
-    flex-direction: column;
-  }
-  .about .row .content {
-    margin-top: 0rem;
-  }
-  .about .row .content h3 {
-    font-size: 2rem;
+  .nav-links {
+    gap: 20px;
   }
 
-  .about .row .content p {
-    line-height: 3rem;
-    font-size: 1.5rem;
-  }
-  .about .row .content p b span {
-    font-size: 2rem;
+  .slider-container {
+    grid-template-columns: 1fr;
   }
 
-  .layanan .row {
+  .slider-promo-left,
+  .slider-promo-right {
+    grid-column: auto;
+    height: 250px;
+  }
+
+  .slider-box-red {
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 85%;
+  }
+
+  /* Sembunyikan top bar di mobile */
+  .top-bar {
+    display: none;
+  }
+
+  header {
+    height: var(--nav-height-mobile);
+    /* 60px */
+  }
+
+  .navbar {
+    height: var(--nav-height-mobile);
+    padding: 0 4%;
+  }
+
+  .navbar .logo img {
+    height: 60px;
+  }
+
+  /* Tampilkan Burger Menu */
+  .toggle-menu {
+    display: block;
+    margin-left: auto;
+  }
+
+  /* --- PENTING: Menu Mobile Slide In/Out dengan Transisi --- */
+  .nav-links {
+    display: flex;
+    position: fixed;
+    right: 0;
+    top: var(--nav-height-mobile);
+    height: calc(100vh - var(--nav-height-mobile));
+    width: 70%;
+    max-width: 300px;
+    /* Batasi lebar menu */
     flex-direction: column;
-    /* height: 100%; */
+    align-items: flex-start;
+    padding: 20px 0;
+    background-color: var(--bg-color-light);
+    box-shadow: -5px 0 15px var(--shadow-color);
+    z-index: 999;
+
+    /* Status Awal: Tersembunyi di luar layar kanan */
+    transform: translateX(100%);
+    visibility: hidden;
+
+    /* Transisi Slide */
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), visibility 0.5s;
   }
-  .layanan .row .card {
-    /* height: 100%; */
-    flex: 2;
+
+  /* Status Aktif: Tampil di layar */
+  #menu-toggle:checked~.nav-links {
+    transform: translateX(0);
+    visibility: visible;
   }
-  .layanan .row .card p {
-    padding: 1rem;
-    line-height: 3rem;
-    font-size: 1.5rem;
-  }
-  .layanan .row .card h3 {
-    font-size: 2rem;
-  }
-  .paket .row {
-    flex-direction: column;
-    /* border: 1px solid; */
-  }
-  .paket .row .cardPaket {
-    flex-direction: column;
-    /* border: 1px solid; */
+
+  /* ------------------------------------------------ */
+
+  .nav-links li {
     width: 100%;
+    padding: 15px 30px;
+    border-bottom: 1px solid var(--border-color-light);
   }
+
+  .nav-links li a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: block;
+  }
+
+  /* Hilangkan garis bawah aktif/hover di mobile */
+  .nav-links li a::after {
+    content: none;
+  }
+
+
+  .cta-section h1 {
+    font-size: 1.8em;
+  }
+
+
+
+  /* Contact Section Mobile */
   .contact .row {
     flex-direction: column;
   }
 
-  .promo .row {
-    width: 100%;
-    display: flex;
+  .contact .content {
+    order: 1;
+  }
+
+  .contact-img {
+    order: 2;
+  }
+
+  /* Footer Mobile */
+  .footer .rowFoot {
     flex-direction: column;
-    margin: auto;
     text-align: center;
-    padding: 2rem;
   }
 
-  .contact .row .content p {
-    margin-left: 3rem;
-    line-height: 2rem;
-  }
-  .contact .row .content .colmn {
-    padding: 1rem;
-    display: flex;
-    margin: 1rem;
-  }
-  .contact .row .content .colmn h3 {
-    margin-top: 0.5rem;
-    border: #075d96;
-  }
-
-  .footer .rowFoot .footWa .linkWa {
-    background-color: #16d365;
-    /* background-color: #f7af32; */
-    display: flex;
-    width: 35%;
-    position: fixed;
-    top: 91%;
-    left: 63%;
-    border-radius: 10px;
-    margin: auto;
-    color: #fff;
-    font-size: 10px;
-    z-index: 2;
-  }
-  .iconWa {
-    border-radius: 100%;
-    width: 17%;
+  .footer .footWa {
+    margin-top: 15px;
   }
 }
 
-/* end display mobile */
-/* mobile phone */
 @media (max-width: 450px) {
   html {
-    font-size: 55%;
+    font-size: 80%;
   }
-}
 
-.scroll-animasi-1 {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 1s ease-out;
-}
-
-.scroll-animasi-1.active {
-  opacity: 1;
-  transform: translateY(0);
-  animation: animasi-scroll-1 0.5s ease-out;
-}
-
-.scroll-animasi-2 {
-  opacity: 0;
-  transform: scaleY(0);
-  transition: all 1s ease-out;
-}
-
-.scroll-animasi-2.active {
-  opacity: 1;
-  transform: scaleY(1);
-  animation: animasi-scroll-2 1s ease-out;
-}
-
-.scroll-animasi-3 {
-  opacity: 0;
-  transform: scaleY(0);
-  transition: all 1s ease-out;
-}
-
-.scroll-animasi-3.active {
-  opacity: 1;
-  transform: scaleY(1);
-  animation: animasi-scroll-3 1s ease-out;
-}
-.scroll-animasi-4 {
-  opacity: 0;
-  transform: scaleY(0);
-  transition: all 1s ease-out;
-}
-
-.scroll-animasi-4.active {
-  opacity: 1;
-  transform: scaleY(1);
-  animation: animasi-scroll-4 1s ease-out;
-}
-
-.scroll-animasi-5 {
-  opacity: 0;
-  transform: translateY(-50px);
-  transition: all 1s ease-out;
-}
-
-.scroll-animasi-5.active {
-  opacity: 1;
-  transform: translateY(0);
-  animation: animasi-scroll-5 1s ease-out;
-}
-
-.scroll-animasi-6 {
-  opacity: 0;
-  transform: translateY(-50px);
-  transition: all 1s ease-out;
-}
-
-.scroll-animasi-6.active {
-  opacity: 1;
-  transform: translateY(0);
-  animation: animasi-scroll-6 1s ease-out;
-}
-
-@keyframes animasi-scroll-1 {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
+  .slider-promo-left,
+  .slider-promo-right {
+    height: 150px;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-@keyframes animasi-scroll-2 {
-  0% {
-    opacity: 0;
-    transform: scaleY(0);
+  .slider-box-red {
+    padding: 15px;
   }
-  100% {
-    opacity: 1;
-    transform: scaleY(1);
-  }
-}
 
-@keyframes animasi-scroll-3 {
-  0% {
-    opacity: 0;
-    transform: scaleY(0);
+  .cta-section h1 {
+    font-size: 1.4em;
   }
-  100% {
-    opacity: 1;
-    transform: scaleY(1);
-  }
-}
 
-@keyframes animasi-scroll-4 {
-  0% {
-    opacity: 0;
-    transform: scaleY(0);
-  }
-  100% {
-    opacity: 1;
-    transform: scaleY(1);
-  }
-}
-
-@keyframes animasi-scroll-5 {
-  0% {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes animasi-scroll-6 {
-  0% {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+  .cta-section p {
+    font-size: 0.9em;
   }
 }
