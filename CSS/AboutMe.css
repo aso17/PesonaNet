@@ -86,6 +86,7 @@
 
     .about-img {
         order: 0;
+        width: 60%;
         /* Gambar selalu di atas */
         text-align: center;
         border: none;

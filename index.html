@@ -47,12 +47,12 @@
     <div class="top-bar">
       <div class="top-bar-content">
         <a href="#">PERSONAL</a>
-        <a href="#">ENTERPRISE</a>
-        <a href="#">TENTANG KAMI</a>
+        <a href="#">BISNIS</a>
+        <a href="#about">TENTANG KAMI</a>
       </div>
       <div class="top-bar-actions">
 
-        <a href="#">PESONA MEDIANET</a>
+        <a href="#about">PESONA MEDIANET</a>
         <a href="#">MY ACCOUNT</a>
 
       </div>
@@ -73,7 +73,7 @@
 
       <ul id="nav-links" class="nav-links">
         <li><a href="#home" class="linknav active">Home</a></li>
-        <li><a href="#about">Promo</a></li>
+        <li><a href="#promo">Promo</a></li>
         <li><a href="#layanan">Layanan</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -82,7 +82,7 @@
 
   <section class="breadcrumb-section">
     <div class="breadcrumb-container">
-      <a href="#">Home</a> / <span class="current-page">Landing Page</span>
+      <a href="#">Home</a> / <span class="current-page">Page</span>
     </div>
   </section>
 
@@ -98,7 +98,7 @@
               <h3>Daftar Sekarang, Nikmati Kecepatannya!</h3>
               <p>Selamat datang di PesonaNet, penyedia layanan internet berkualitas untuk wilayah Tangerang dan
                 sekitarnya.</p>
-              <a href="#register" class="btn btn-primary-cta">Daftar Sekarang</a>
+              <a href="#register" class="btn btn-primary">Daftar Sekarang</a>
             </div>
           </div>
 
@@ -148,7 +148,7 @@
   </section>
   <div class="promo-grid-bottom">
 
-    <div class="slider-item slider-box-red promo-bottom-card">
+    <div class="slider-item slider-box-red promo-bottom-card promo-left fade-in-up-hidden" data-delay="0">
       <h3>Promo Diskon Awal</h3>
       <ul>
         <li><span class="icon-checkmark">&#10003;</span> Gratis Pemasangan</li>
@@ -159,7 +159,7 @@
       <a href="#" class="btn btn-secondary">Lihat Detail</a>
     </div>
 
-    <div class="slider-item slider-box-red promo-bottom-card">
+    <div class="slider-item slider-box-red promo-bottom-card promo-right fade-in-up-hidden" data-delay="300">
       <h3>Layanan Terbaik</h3>
       <ul>
         <li><span class="icon-checkmark">&#10003;</span> Dukungan Teknis 24 Jam</li>
@@ -181,8 +181,8 @@
         <img src="img/logo.png" alt="about" />
       </div>
       <div class="content">
-        <h3>Pesona<span>Net</span></h3>
-        <div class="content-text-wrapper">
+        <!-- <h3>Pesona<span>Net</span></h3> -->
+        <div class="content-text-wrapper fade-in-up-hidden" data-delay="0">
           <p>PesonaNet didirikan sejak tahun 2021 untuk memberikan akses internet berkualitas dan terjangkau di wilayah
             Tangerang dan sekitarnya. Mengutamakan kenyamanan pengguna dengan infrastruktur fiber optik yang memadai
             dan tim teknisi berpengalaman, membuat <b>Pesona<span>Net</span></b> menjadi pilihan utama dalam layanan
@@ -199,42 +199,50 @@
   <section id="layanan" class="layanan">
     <h2>Laya<span>nan</span></h2>
     <div class="row">
-      <div class="card">
-        <i data-feather="users"></i>
+
+      <div class="card fade-in-up-hidden" data-delay="0">
+        <img src="img/monitoring.webp" alt="Ikon Monitoring" class="layanan-icon">
         <h3>Monitoring</h3>
         <p>Tim teknisi kami akan segera mendeteksi dan menangani setiap masalah yang mungkin terjadi pada jaringan Anda.
         </p>
       </div>
-      <div class="card">
-        <i data-feather="bar-chart"></i>
+
+      <div class="card fade-in-up-hidden" data-delay="100">
+        <img src="img/Stabilitas.webp" alt="Ikon Stabilitas" class="layanan-icon">
         <h3>Stabilitas</h3>
         <p>Jaringan fiber optik yang kami miliki menawarkan stabilitas luar biasa dengan waktu operasional hingga 99,9%.
         </p>
       </div>
-      <div class="card">
-        <i data-feather="disc"></i>
+
+      <div class="card fade-in-up-hidden" data-delay="200">
+        <img src="img/capcity.webp" alt="Ikon Kapasitas" class="layanan-icon">
         <h3>Kapasitas</h3>
         <p>Bandwidth yang lebih besar, tim kami siap melakukan upgrade sesuai dengan kebutuhan Anda.</p>
       </div>
+
     </div>
+
     <div class="row">
-      <div class="card">
-        <i data-feather="lock"></i>
+      <div class="card fade-in-up-hidden" data-delay="300">
+        <img src="img/security.webp" alt="Ikon Keamanan" class="layanan-icon">
         <h3>Keamanan</h3>
         <p>Kami menjamin keamanan jaringan hingga 99% dengan menggunakan teknologi terkini dan dikelola oleh teknisi
           ahli dan profesional.</p>
       </div>
-      <div class="card">
-        <i data-feather="radio"></i>
+
+      <div class="card fade-in-up-hidden" data-delay="400">
+        <img src="img/network.webp" alt="Ikon Hotspot Service" class="layanan-icon">
         <h3>Hotspot Service</h3>
         <p>Instalasi Hotspot untuk segala bidang usaha berlangganan personal ataupun perusahaan.</p>
       </div>
-      <div class="card">
-        <i data-feather="phone-outgoing"></i>
+
+      <div class="card fade-in-up-hidden" data-delay="500">
+        <img src="img/support.webp" alt="Ikon Dukungan" class="layanan-icon">
         <h3>Dukungan</h3>
         <p>Kami memiliki Customer Care dan Pusat Operasi Jaringan yang selalu siap melayani Anda 24 jam sehari, 7 hari
           seminggu.</p>
       </div>
+
     </div>
   </section>
 
@@ -272,7 +280,7 @@
     <h2>Cont<span>act</span></h2>
     <div class="row">
       <div class="contact-img">
-        <img src="https://pesonamedia.net/WebPesonaNet/img/Contact.svg" alt="about" />
+        <img src="img/contact.webp" alt="about" />
       </div>
       <div class="content">
         <div class="colmn">

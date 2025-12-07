@@ -22,7 +22,7 @@ function animateCounter(elementId, finalValue, duration) {
     requestAnimationFrame(step);
 }
 
-function animateStaggeredList(selector, delay = 200) {
+function animateStaggeredList(selector, delay = 1000) {
     const items = document.querySelectorAll(selector);
 
     // Hapus kelas 'show' dari SEMUA elemen list saat ini (untuk reset visual instan)
@@ -136,6 +136,40 @@ document.addEventListener('DOMContentLoaded', () => {
         startAutoplay();
     }
 
-    // D. Panggilan Animasi Statis (Jika ada kotak promo di luar slider)
-    // Contoh: animateCounter('id-promo-bawah-1', 90, 3000); 
+    const elementsToAnimate = document.querySelectorAll('.fade-in-up-hidden');
+
+    // Opsi Observer
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const element = entry.target;
+
+                // Ambil nilai delay (dalam milidetik) dari atribut data-delay
+                const delay = element.getAttribute('data-delay') || 0; // Default 0 jika tidak ada data-delay
+
+                // Tambahkan transition-delay secara inline
+                element.style.transitionDelay = `${delay}ms`;
+
+                // Hapus kelas penyembunyi awal
+                element.classList.remove('fade-in-up-hidden');
+
+                // Tambahkan kelas pemicu animasi
+                element.classList.add('is-animated');
+
+                // Hentikan pengamatan
+                observer.unobserve(element);
+            }
+        });
+    }, options);
+
+    // Mulai mengamati SEMUA elemen yang memiliki kelas .fade-in-up-hidden
+    elementsToAnimate.forEach(element => {
+        observer.observe(element);
+    });
 });

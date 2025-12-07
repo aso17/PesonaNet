@@ -3,9 +3,9 @@
 /* ======================== */
 :root {
   /* Palet Warna Biru & Putih */
-  --primary-blue: #007bff;
+  --primary-blue: #164f8c;
   /* Biru Primer Solid */
-  --primary-gradient: linear-gradient(to right, #007bff, #00c7e5);
+  --primary-gradient: linear-gradient(to right, #164f8c, #00c7e5);
   /* Gradient Biru */
   --secondary-color: #0056b3;
   /* Biru Sekunder lebih gelap */
@@ -233,11 +233,54 @@ header {
 
 
 
-
-
 /* ======================== */
 /* 7. LAYANAN SECTION STYLING */
 /* ======================== */
+.layanan-icon {
+  /* Atur ukuran gambar (sesuaikan dengan desain Anda) */
+  width: 100px;
+  height: 100px;
+
+  /* Beri jarak antara gambar dan judul h3 */
+  margin-bottom: 10px;
+
+  /* Pastikan gambar tampil rapi di tengah */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Jika Anda ingin memastikan gambar di dalam .card terpusat */
+.layanan .card {
+  text-align: center;
+  /* Pastikan Anda menghapus style Feather Icon lama jika ada */
+}
+
+.layanan h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* Garis bawah Judul Section (Gradient Biru) */
+.layanan h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--primary-gradient);
+  border-radius: 2px;
+}
+
+.layanan h2 span {
+  color: var(--primary-blue);
+}
 
 .layanan .row {
   display: flex;
@@ -277,9 +320,49 @@ header {
   color: var(--secondary-color);
 }
 
+
 /* ======================== */
-/* 8. PROMO SECTION STYLING */
+/* 8. PROMO SECTION STYLING (FINAL DENGAN ANIMASI FIX) */
 /* ======================== */
+
+/* 1. Definisi Keyframes untuk Animasi Berkedip */
+@keyframes promoPulse {
+  0% {
+    transform: scale(1);
+    color: white;
+  }
+
+  50% {
+    transform: scale(1.15);
+    /* Membesar */
+    color: #ff0000;
+    /* Merah */
+  }
+
+  100% {
+    transform: scale(1);
+    color: white;
+  }
+}
+
+/* Tambahkan vendor prefix untuk kompatibilitas yang lebih baik */
+@-webkit-keyframes promoPulse {
+  0% {
+    -webkit-transform: scale(1);
+    color: white;
+  }
+
+  50% {
+    -webkit-transform: scale(1.15);
+    color: #ff0000;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    color: white;
+  }
+}
+
 
 .promo {
   background: var(--primary-gradient);
@@ -291,11 +374,31 @@ header {
 .promo h2 {
   color: white;
   margin-bottom: 1.5rem;
+
+  /* PENTING: Set transform-origin sebelum animasi */
+  transform-origin: center;
+  -webkit-transform-origin: center;
+
+  /* Menerapkan Animasi Pulsating */
+  animation-name: promoPulse;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+  /* Vendor prefix untuk properti animasi */
+  -webkit-animation-name: promoPulse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
 }
 
 .promo h2::after {
   background-color: white !important;
 }
+
+/* ... (Kode .promo .row dan .promo .content tidak berubah) ... */
 
 .promo .row {
   display: flex;
