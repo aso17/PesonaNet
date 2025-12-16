@@ -18,9 +18,9 @@
       rel="stylesheet"
       href="https://pesonamedia.net/WebPesonaNet/CSS/style.css"
     /> -->
-  <link rel="stylesheet" href="CSS/style.css" />
-  <link rel="stylesheet" href="CSS/sideBar.css" />
-  <link rel="stylesheet" href="CSS/AboutMe.css" />
+  <link rel="stylesheet" href="CSS/myStyle.css" />
+  <!-- <link rel="stylesheet" href="CSS/sideBar.css" />
+  <link rel="stylesheet" href="CSS/AboutMe.css" /> -->
   <!-- <link rel="icon" href="https://pesonamedia.net/WebPesonaNet/img/company.jpeg" type="image/jpeg"
     style="border-radius: 100px" /> -->
   <link rel="icon" href="img/logo.jpeg" type="image/jpeg" style="border-radius: 100px" />
@@ -73,8 +73,8 @@
 
       <ul id="nav-links" class="nav-links">
         <li><a href="#home" class="linknav active">Home</a></li>
-        <li><a href="#promo">Promo</a></li>
         <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#lokasi">lokasi</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -245,81 +245,138 @@
 
     </div>
   </section>
+  <div class="content content-detail content-single-column">
 
-  <section class="promo" id="promo">
-    <div class="row">
-      <h2>PROMO !!!</h2>
-      <div class="content">
-        <b>
-          <p>Bayar 6 Bulan Gratis 1 buah CCTV Ip Cam Bisa lihat situasi Rumah Dari Jarak Jauh</p>
-        </b>
+    <h3 class="area-title">Area Yang Sudah Tercover</h3>
+    <p class="coverage-intro">
+      Halo! Saat ini PesonaNet sudah memperluas Jaringan nya loh. Berikut adalah daftar lokasi yang sudah tercover:
+    </p>
+
+    <!-- GRID WRAPPER -->
+    <div class="coverage-grid ">
+
+      <!-- KOLOM KIRI -->
+      <ul class="coverage-list custom-scroll fade-in-up-hidden" data-delay="300">
+        <li><span class="list-checkmark">&#10003;</span> Perum Cluster Mutiara Cukanggalih 1</li>
+        <li><span class="list-checkmark">&#10003;</span> Perum Teras Citra</li>
+        <li><span class="list-checkmark">&#10003;</span> Kp. Cisereh RT. 02/01</li>
+        <li><span class="list-checkmark">&#10003;</span> Kp. Soka RT. 02/01</li>
+        <li><span class="list-checkmark">&#10003;</span> Kp. Soka RT. 03/01</li>
+        <li><span class="list-checkmark">&#10003;</span> Kp. Cukanggalih Sabrang Desa Ciakar</li>
+        <li><span class="list-checkmark">&#10003;</span> Perum Duta Asri Desa Ciakar</li>
+        <li><span class="list-checkmark">&#10003;</span> Kp. Peusar</li>
+        <li><span class="list-checkmark">&#10003;</span> Kp. Binong</li>
+        <li><span class="list-checkmark">&#10003;</span> Kp. Pasirandu</li>
+        <li><span class="list-checkmark">&#10003;</span> Pramita</li>
+        <li><span class="list-checkmark">&#10003;</span> Kp. Cijengir</li>
+        <li><span class="list-checkmark">&#10003;</span> Kp. Cukanggalih</li>
+        <li><span class="list-checkmark">&#10003;</span> Kp. Rabcabalok</li>
+      </ul>
+
+      <!-- KOLOM KANAN -->
+      <div class="cek-form-container fade-in-up-hidden" data-delay="600">
+        <h3 class="form-title">Masih Ragu? Cek Alamat Anda!</h3>
+        <form id="waForm">
+          <input type="text" placeholder="Masukkan Alamat Lengkap Anda..." name="alamat_cek_jangkauan" id="alamatInput"
+            required>
+          <button type="submit" class="btn btn-gradient">CEK KETERSEDIAAN</button>
+        </form>
       </div>
-      <div class="content">
-        <b>
-          <p>Harga Paket Tidak Berubah-ubah <i>(Flat)</i> Harga Sudah Termasuk Ppn 11%</p>
-        </b>
-      </div>
+
     </div>
-  </section>
+  </div>
+  <section class="promo-section" id="promo-section">
+    <div class="promo-container">
 
-  <section class="ketentuan">
-    <h2>Syarat & Ketentuan</h2>
-    <div class="row">
-      <div class="content">
-        <ul class="list">
-          <li>Sertakan Foto KTP</li>
-          <li>Perangkat Dipinjamkan Selama Berlangganan</li>
-          <li>Tidak Untuk Dijual Kembali</li>
-          <li>Gratis Kabel 100m</li>
-        </ul>
+      <!-- KOLOM KIRI (GAMBAR) -->
+      <div class="promo-image">
+        <img src="img/contact.webp" alt="Internet Cepat dan Stabil">
       </div>
-    </div>
-  </section>
 
-  <section id="contact" class="contact">
-    <h2>Cont<span>act</span></h2>
-    <div class="row">
-      <div class="contact-img">
-        <img src="img/contact.webp" alt="about" />
-      </div>
-      <div class="content">
-        <div class="colmn">
-          <i data-feather="mail"></i>
-          <h3>Email</h3>
-        </div>
-        <p>admin@pesonamedia.net</p>
+      <!-- KOLOM KANAN (KONTEN) -->
+      <div class="promo-content fade-in-up-hidden" data-delay="300">
+        <h3>
+          Solusi Internet Cepat dan Stabil untuk Wilayah Tangerang
+        </h3>
 
-        <div class="colmn">
-          <i data-feather="phone-call"></i>
-          <h3>Telpon</h3>
-        </div>
-        <p>+62-878-251-226-45</p>
-        <div class="colmn">
-          <i data-feather="map-pin"></i>
-          <h3>Alamat</h3>
-        </div>
-        <p>Jl. Kp Peusar RT. 005/001 Kel. Binong kec. Curug Kab. Tangerang - Banten</p>
+
+        <p>
+          Pesonanet menghadirkan layanan internet untuk kebutuhan rumah, bisnis, dan instansi
+          dengan koneksi stabil, harga kompetitif, serta dukungan teknis yang dapat diandalkan.
+        </p>
+
+
+        <p>
+          Koneksi internet yang cepat dan stabil menjadi faktor penting dalam menunjang
+          produktivitas kerja, proses pembelajaran, serta kenyamanan hiburan di rumah.
+          Dengan dedikasi dan pengalaman yang kami miliki, Pesonanet hadir sebagai partner
+          terpercaya untuk kebutuhan digital Anda.
+        </p>
+
+
+        <a href="#about" class="btn btn-white">
+          Selengkapnya
+        </a>
       </div>
+
     </div>
   </section>
 
   <footer class="footer">
-    <div class="rowFoot">
-      <div class="footCopy">
-        <p>Copyright &copy; PT. Pesona Network Mediatama</p>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>PT. Pesona Network </h4>
+        <p>Telp: +62-878-251-226-45</p>
+        <p>
+          Jl. Kp Peusar RT. 005/001 Kel. Binong kec. Curug Kab. Tangerang - Banten
+        </p>
+        <p>@pesonamedia.net</p>
+        <div class="footer-badge">
+          <img src="/img//logo.webp" alt="PesonaNet Logo" />
+
+        </div>
       </div>
-      <div class="footWa">
-        <a class="linkWa"
-          href="https://wa.me/6287825122645?text=%20Halo?%20Admin%20saya%20ingin%20berlangganan%20layanan%20Internet">
-          <img class="iconWa" src="https://pesonamedia.net/WebPesonaNet/img//iconwhatsapp.gif" alt="iconWa" />
-          Chat Whatsapp
-        </a>
+
+      <div class="footer-col">
+        <h4>LAYANAN</h4>
+        <ul>
+          <li><a href="#">Bisnis</a></li>
+          <li><a href="#">Untuk Rumah & Kantor Kecil</a></li>
+          <li><a href="#">Kemitraan</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>LOKASI</h4>
+        <ul>
+          <li><a href="#">Tangerang</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>INFO LAINNYA</h4>
+        <ul>
+
+          <li><a href="#">Kontak Kami</a></li>
+        </ul>
       </div>
     </div>
+
+    <div class="footer-bottom">
+      <p>Copyright &copy; PT. Pesona Media Network</p>
+    </div>
+
+    <a class="whatsapp-float"
+      href="https://wa.me/6287825122645?text=Halo Admin, saya ingin berlangganan layanan Internet" target="_blank"
+      rel="noopener noreferrer">
+      <img src="https://pesonamedia.net/WebPesonaNet/img//iconwhatsapp.gif" alt="WhatsApp Icon" />
+      Chat Whatsapp
+    </a>
   </footer>
 
   <script src="/js/script.js"></script>
-  <script src="/js/sideBar.js"></script>
+  <!-- <script src="/js/sideBar.js"></script> -->
 </body>
 
 </html>

@@ -1,0 +1,1397 @@
+/* ================================================= */
+/* 🚀 VARIABEL & RESET GLOBAL (Gaya PesonaNet: Biru & Putih) */
+/* ================================================= */
+:root {
+    /* Palet Warna Biru & Putih */
+    --primary-blue: #164f8c;
+    /* Biru Primer Solid */
+    --primary-gradient: linear-gradient(to right, #164f8c, #00c7e5);
+    /* Gradient Biru */
+    --secondary-color: #0056b3;
+    /* Biru Sekunder lebih gelap */
+    --text-color-primary: #212529;
+    /* Hitam Hampir Penuh */
+    --text-color-light: #6c757d;
+    /* Abu-abu untuk Subteks */
+    --bg-color-light: #ffffff;
+    /* Latar Belakang Putih */
+    --bg-color-soft: #f8f8f8;
+    /* Latar Belakang Sangat Terang */
+    --shadow-color: rgba(0, 0, 0, 0.12);
+    /* Bayangan Halus */
+    --border-color-light: #eeeeee;
+    /* Warna Garis Pemisah */
+    --top-bar-height: 35px;
+    /* Tinggi Top Bar */
+    --nav-height-desktop: 70px;
+    /* Tinggi Navbar Utama di Desktop */
+    --nav-height-mobile: 60px;
+    /* Tinggi Navbar Utama di Mobile */
+}
+
+/* Reset dan Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color-soft);
+    color: var(--text-color-primary);
+    min-height: 100vh;
+}
+
+section {
+    padding: 5rem 7%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ======================== */
+/* 1. TOP BAR STYLING */
+/* ======================== */
+
+.top-bar {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    height: var(--top-bar-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7%;
+    font-size: 0.8em;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--border-color-light);
+}
+
+.top-bar a {
+    color: var(--text-color-light);
+    margin-right: 15px;
+    transition: color 0.2s;
+}
+
+.top-bar a:hover {
+    color: var(--primary-blue);
+}
+
+.top-bar-actions .flag {
+    height: 12px;
+    margin-right: 5px;
+}
+
+/* ======================== */
+/* 2. MAIN NAVBAR & BURGER MENU */
+/* ======================== */
+
+header {
+    background: var(--bg-color-light);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* Tinggi total header di desktop */
+    height: calc(var(--top-bar-height) + var(--nav-height-desktop));
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: var(--nav-height-desktop);
+    padding: 0 7%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar .logo img {
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+/* Navigasi Desktop (Normal State) */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    /* **PENTING**: Pastikan styling desktop normal */
+    transform: none;
+    visibility: visible;
+    transition: none;
+    /* Hilangkan transisi di desktop */
+}
+
+.nav-links li a {
+    color: var(--text-color-primary);
+    font-weight: 500;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--primary-blue);
+}
+
+/* Garis Bawah Hover/Active */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--primary-gradient);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+    width: 100%;
+}
+
+/* Burger Menu Toggle */
+#menu-toggle {
+    display: none;
+}
+
+.toggle-menu {
+    display: none;
+    cursor: pointer;
+    z-index: 1002;
+    padding: 10px;
+}
+
+.toggle-menu span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: var(--text-color-primary);
+    border-radius: 3px;
+    transition: all 0.4s;
+    margin: 6px 0;
+    transform-origin: 0 50%;
+}
+
+/* Animasi Burger to 'X' */
+#menu-toggle:checked+.toggle-menu span:nth-child(1) {
+    transform: rotate(45deg) translate(2px, -1px);
+    background: var(--primary-gradient);
+}
+
+#menu-toggle:checked+.toggle-menu span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+#menu-toggle:checked+.toggle-menu span:nth-child(3) {
+    transform: rotate(-45deg) translate(2px, 1px);
+    background: var(--primary-gradient);
+}
+
+/* ======================== */
+/* 3. BREADCRUMB SECTION */
+/* ======================== */
+.breadcrumb-section {
+    background-color: var(--bg-color-soft);
+    padding: 10px 7%;
+    border-bottom: 1px solid var(--border-color-light);
+    font-size: 0.9em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.breadcrumb-container a {
+    color: var(--text-color-light);
+    transition: color 0.2s;
+}
+
+.breadcrumb-container a:hover {
+    color: var(--primary-blue);
+}
+
+.current-page {
+    color: var(--text-color-primary);
+    font-weight: 600;
+}
+
+
+/* ======================== */
+/* 4. HERO SLIDER SECTION */
+/* ======================== */
+
+.hero-slider {
+    padding: 30px 7%;
+    background-color: var(--bg-color-soft);
+}
+
+/* 1. CONTAINER SLIDER UTAMA (Slider Berputar) */
+.slider-container {
+    /* **PENTING:** Kontainer hanya menampilkan satu slide pada satu waktu */
+    overflow: hidden;
+    display: block;
+}
+
+/* Kontainer yang menampung semua slide dan akan digeser oleh JS */
+.slides-wrapper {
+    display: flex;
+    /* Memastikan semua slide berjejer horizontal */
+    width: 100%;
+    /* Transisi untuk efek geser */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Gaya untuk setiap slide individual */
+.slider-item.slider-slide {
+    min-width: 100%;
+    /* Setiap slide wajib mengambil lebar penuh kontainer */
+
+    /* Menerapkan tata letak grid 2:1 di tingkat slide */
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+
+    /* Styling Visual Slide */
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+/* Gaya untuk Box Promo di KANAN (1/3) */
+.slider-box-red {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    height: 350px;
+    /* Tinggi seragam untuk slider utama */
+    box-shadow: none;
+    /* Shadow ada di .slider-slide */
+}
+
+/* Gaya untuk Box KIRI (2/3) - Dapat berisi Gambar atau Teks */
+.slider-promo-left {
+    /* Gaya Dasar */
+    grid-column: 1 / 2;
+    height: 350px;
+    /* Tinggi seragam untuk slider utama */
+    box-shadow: none;
+
+    /* Gaya Khusus untuk Teks/CTA (Slide 1) */
+    background-color: var(--bg-color-light);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Gaya untuk konten Teks/CTA di dalam .slider-promo-left */
+.promo-text-content h3 {
+    font-size: 1.8em;
+    color: var(--text-color-primary);
+    margin-bottom: 10px;
+}
+
+.promo-text-content p {
+    color: var(--text-color-light);
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: opacity 0.3s;
+    text-transform: uppercase;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+/* Styling elemen di dalam .slider-box-red */
+.slider-box-red h3 {
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.slider-box-red ul {
+    list-style: none;
+    margin-bottom: 15px;
+    padding-left: 0;
+}
+
+.slider-box-red ul li {
+    font-weight: 600;
+    text-align: left;
+    padding-left: 20px;
+    position: relative;
+}
+
+.slider-box-red ul li .icon-checkmark {
+    position: absolute;
+    left: 0;
+    color: #aaffaa;
+    font-weight: bold;
+}
+
+.slider-box-red p {
+    font-size: 0.9em;
+    margin-top: 15px;
+}
+
+.slider-box-red .btn-secondary {
+    background-color: white;
+    color: var(--primary-blue);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 700;
+    align-self: center;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.slider-box-red .btn-secondary:hover {
+    background-color: #f0f0f0;
+}
+
+/* Kontrol Slider (Dot dan Panah) */
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    gap: 15px;
+}
+
+.dots-container {
+    display: flex;
+    gap: 8px;
+}
+
+.dots-container .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--border-color-light);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.dots-container .dot.active {
+    background: var(--primary-gradient);
+    transform: scale(1.2);
+}
+
+.prev-btn,
+.next-btn {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: var(--text-color-light);
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: var(--border-color-light);
+    color: var(--text-color-primary);
+}
+
+
+/* 2. BAGIAN PROMO BAWAH (Dua Komponen Statis) */
+
+.promo-grid-bottom {
+    display: flex;
+    gap: 20px;
+    /* Jarak antara dua kotak */
+    margin-top: 40px;
+    /* Jarak dari slider di atasnya */
+    max-width: 100%;
+}
+
+.promo-bottom-card {
+    flex: 1 1 50%;
+    /* Setiap kotak mengambil setengah lebar yang tersedia */
+    height: auto;
+    background: var(--primary-gradient);
+    min-height: 250px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.slider-promo-left .slider-image {
+    width: 100%;
+    /* Gambar selalu mengisi lebar kontainer */
+    height: 100%;
+    /* Gambar selalu mengisi tinggi kontainer */
+    object-fit: cover;
+    /* **PENTING: Memastikan gambar mengisi area tanpa distorsi** */
+
+    display: block;
+    /* Menghilangkan margin bawah default pada img */
+}
+
+/* Aturan yang sepertinya salah/tidak lengkap */
+.slider-item.slider-box-red.promo-bottom-card {
+    background: var(--primary-gradient);
+}
+
+
+/* ======================== */
+/* 5. ABOUT SECTION STYLING */
+/* ======================== */
+.about h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Garis bawah Judul Section (Gradient Biru) */
+.about h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--primary-gradient);
+    border-radius: 2px;
+}
+
+.about h2 span {
+    color: var(--primary-blue);
+}
+
+.about .row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 0 10px;
+    width: 100%;
+}
+
+.about-img {
+    flex: 0 0 45%;
+}
+
+.about-img img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px #fff;
+}
+
+.about .content {
+    flex: 1 1 55%;
+}
+
+.about .content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+/* ======================== */
+/* 6. PROMO SECTION (Konten Biru di Bawah) */
+/* ======================== */
+
+/* SECTION UTAMA */
+.promo-section {
+    background: var(--primary-gradient);
+    margin-top: 2em;
+}
+
+/* CONTAINER */
+.promo-container {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* GAMBAR */
+.promo-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* KONTEN */
+.promo-content {
+    color: #ffffff;
+}
+
+.promo-content h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.promo-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* BUTTON PUTIH */
+.btn-white {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 28px;
+    background: #ffffff;
+    color: #1b5f8a;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-white:hover {
+    background: #f1f1f1;
+    transform: translateY(-2px);
+}
+
+/* Bentuk melengkung di atas section */
+.promo-section::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: white;
+    border-bottom-left-radius: 50% 100%;
+    border-bottom-right-radius: 50% 100%;
+}
+
+
+/* ======================== */
+/* 7. LAYANAN SECTION STYLING */
+/* ======================== */
+.layanan h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Garis bawah Judul Section (Gradient Biru) */
+.layanan h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--primary-gradient);
+    border-radius: 2px;
+}
+
+.layanan h2 span {
+    color: var(--primary-blue);
+}
+
+.layanan .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.layanan-icon {
+    /* Atur ukuran gambar (sesuaikan dengan desain Anda) */
+    width: 100px;
+    height: 100px;
+
+    /* Beri jarak antara gambar dan judul h3 */
+    margin-bottom: 10px;
+
+    /* Pastikan gambar tampil rapi di tengah */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.layanan .card {
+    flex: 1 1 300px;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    background: var(--bg-color-light);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.layanan .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.layanan .card i {
+    color: var(--primary-blue);
+    width: 45px;
+    height: 45px;
+    stroke-width: 2.5;
+    margin-bottom: 1rem;
+}
+
+.layanan .card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+
+/* ======================== */
+/* 8. JANGKAUAN LAYANAN STYLING */
+/* ======================== */
+
+#jangkauan {
+    background: #f7f7f7;
+    text-align: center;
+    padding: 3rem 7%;
+}
+
+
+#jangkauan h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Garis bawah Judul Section (Gradient Biru) */
+#jangkauan h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--primary-gradient);
+    border-radius: 2px;
+}
+
+#jangkauan h2 span {
+    color: var(--primary-blue);
+}
+
+
+/* Tata Letak Satu Kolom di Tengah */
+#jangkauan .row {
+    display: flex;
+    justify-content: center;
+    /* Memposisikan konten di tengah */
+    flex-wrap: wrap;
+    gap: 0;
+}
+
+/* Gaya Card Tunggal */
+.content-single-column {
+    text-align: left;
+    /* SEMUA ISI DALAM KOTAK PUTIH AKAN RATA KIRI */
+    flex: 0 1 100%;
+
+    background-color: white;
+    /* LATAR BELAKANG CARD UTAMA PUTIH */
+
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+/* --- STYLE JUDUL DAN INTRO --- */
+.content-detail .area-title,
+.content-detail .form-title {
+    color: var(--primary-blue);
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.content-detail .coverage-intro {
+    color: #444;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+/* --- DAFTAR LOKASI (LIST SCROLLABLE) --- */
+.coverage-list {
+    list-style: none;
+    padding: 0 15px;
+    margin: 15px 0;
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    padding: 5px 15px;
+    border-radius: 5px;
+
+    /* LATAR BELAKANG GRADIENT SESUAI PERMINTAAN */
+    background: var(--primary-gradient);
+}
+
+.coverage-list li {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+
+    /* Garis bawah tipis dan terang agar terlihat di atas gradient */
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+
+    /* WARNA TEKS PUTIH AGAR JELAS DI ATAS LATAR BELAKANG GRADIENT */
+    color: white;
+
+    font-size: 0.95rem;
+}
+
+.coverage-list li:last-child {
+    border-bottom: none;
+}
+
+/* Style Ceklis */
+.list-checkmark {
+    color: #aaffaa;
+    /* Ceklis juga putih */
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-right: 10px;
+    line-height: 1;
+}
+
+/* --- FORM DAN TOMBOL --- */
+.cek-form-container {
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.content-single-column input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.btn-gradient {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: var(--primary-gradient);
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+}
+
+
+/* GRID 2 KOLOM UNTUK DESKTOP */
+.coverage-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+    align-items: start;
+}
+
+/* Form kanan lebih "card-like" */
+.coverage-grid .cek-form-container {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+
+/* ======================== */
+/* 9. FOOTER & WA FLOAT */
+/* ======================== */
+
+.footer {
+    background: var(--primary-gradient);
+    margin-top: 2em;
+    color: #fff;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.footer-col h4 {
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.footer-col p,
+.footer-col ul {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-badge {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-badge img {
+    width: 70px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* WhatsApp floating button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #1ebe57;
+}
+
+.whatsapp-float img {
+    width: 24px;
+    height: 24px;
+}
+
+/* ======================== */
+/* STAGGERED LIST & FADE-IN ANIMATION CSS */
+/* ======================== */
+
+/* Gaya animasi untuk fade-in-up-hidden */
+.fade-in-up-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    /* Geser lebih sedikit untuk kartu kecil */
+}
+
+/* 2. GAYA AKHIR (Dipicu oleh JS) */
+.is-animated {
+    opacity: 1;
+    transform: translateY(0);
+
+    /* Transisi dipastikan ada di sini. Delay akan disuntikkan oleh JS */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.stagger-item {
+    /* Gaya Awal: Sembunyikan elemen dan turunkan sedikit */
+    opacity: 0;
+    transform: translateY(10px);
+
+    /* Atur Transisi */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.stagger-item.show {
+    /* Gaya Akhir: Tampilkan elemen dan kembalikan ke posisi normal */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ================================================= */
+/* 📱 MEDIA QUERY (MOBILE RESPONSIVE) */
+/* ================================================= */
+
+@media (max-width: 992px) {
+    html {
+        font-size: 90%;
+    }
+
+    section {
+        padding: 4rem 4%;
+    }
+
+    .top-bar {
+        padding: 0 4%;
+    }
+
+    .navbar {
+        padding: 0 4%;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    /* Penyesuaian untuk Slider Utama di Tablet (992px) */
+    .hero-slider {
+        padding: 20px 4%;
+        /* Kurangi padding hero slider */
+    }
+
+    .slider-item.slider-slide {
+        grid-template-columns: 2fr 1fr;
+        /* Tetap horizontal */
+        gap: 15px;
+        /* Kurangi gap */
+        box-shadow: 0 2px 10px var(--shadow-color);
+        /* Sedikit shadow lebih kecil */
+    }
+
+    .slider-promo-left {
+        height: auto;
+        /* **PENTING: Biarkan tinggi otomatis agar teks tidak terpotong** */
+        min-height: 250px;
+        /* Tapi tetap ada tinggi minimum */
+        padding: 20px;
+        /* Kurangi padding */
+        align-items: center;
+        /* Rata tengah konten jika flex */
+        text-align: center;
+        /* Rata tengah teks */
+    }
+
+    .promo-text-content h3 {
+        font-size: 1.5em;
+        /* Kurangi ukuran font */
+        margin-bottom: 8px;
+    }
+
+    .promo-text-content p {
+        font-size: 0.9em;
+        /* Kurangi ukuran font paragraf */
+        margin-bottom: 15px;
+    }
+
+    /* btn-primary-cta tidak ada definisi, mungkin maksudnya .btn-primary */
+    .btn-primary {
+        padding: 10px 20px;
+        /* Kurangi padding tombol */
+        font-size: 0.9em;
+        /* Kurangi ukuran font tombol */
+    }
+
+    .slider-box-red {
+        height: auto;
+        /* **PENTING: Biarkan tinggi otomatis** */
+        min-height: 250px;
+        /* Tapi tetap ada tinggi minimum */
+        padding: 20px 15px;
+        /* Kurangi padding */
+    }
+
+    .slider-box-red h3 {
+        font-size: 1.3em;
+        margin-bottom: 8px;
+    }
+
+    .slider-box-red ul li {
+        font-size: 0.9em;
+        padding-left: 18px;
+    }
+
+    .slider-box-red p {
+        font-size: 0.8em;
+    }
+
+    .slider-box-red .btn-secondary {
+        padding: 8px 15px;
+        font-size: 0.85em;
+    }
+
+    /* Promo Grid Bawah tetap fleksibel */
+    .promo-grid-bottom {
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .promo-bottom-card {
+        min-height: 200px;
+        padding: 20px 15px;
+    }
+
+    .slider-promo-left .slider-image {
+        object-fit: cover;
+        /* Pertahankan object-fit cover */
+    }
+
+    /* Promo Section */
+    .promo-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .promo-content {
+        text-align: left;
+    }
+}
+
+
+@media (max-width: 768px) {
+    html {
+        font-size: 85%;
+    }
+
+    /* Sembunyikan top bar di mobile */
+    .top-bar {
+        display: none;
+    }
+
+    header {
+        height: var(--nav-height-mobile);
+        /* 60px */
+    }
+
+    .navbar {
+        height: var(--nav-height-mobile);
+        padding: 0 4%;
+    }
+
+    .navbar .logo img {
+        height: 50px;
+    }
+
+    /* Tampilkan Burger Menu */
+    .toggle-menu {
+        display: block;
+        margin-left: auto;
+    }
+
+    /* Menu Mobile Slide In/Out */
+    .nav-links {
+        display: flex;
+        position: fixed;
+        right: 0;
+        top: var(--nav-height-mobile);
+        height: calc(100vh - var(--nav-height-mobile));
+        width: 70%;
+        max-width: 300px;
+        /* Batasi lebar menu */
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 0;
+        background-color: var(--bg-color-light);
+        box-shadow: -5px 0 15px var(--shadow-color);
+        z-index: 999;
+
+        /* Status Awal: Tersembunyi di luar layar kanan */
+        transform: translateX(100%);
+        visibility: hidden;
+
+        /* Transisi Slide */
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), visibility 0.5s;
+    }
+
+    /* Status Aktif: Tampil di layar */
+    #menu-toggle:checked~.nav-links {
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+    .nav-links li {
+        width: 100%;
+        padding: 15px 30px;
+        border-bottom: 1px solid var(--border-color-light);
+    }
+
+    .nav-links li a {
+        font-size: 1.2rem;
+        font-weight: 600;
+        display: block;
+    }
+
+    /* Hilangkan garis bawah aktif/hover di mobile */
+    .nav-links li a::after {
+        content: none;
+    }
+
+    /* Slider Utama di Mobile (768px) */
+    .slider-item.slider-slide {
+        gap: 10px;
+        /* Kurangi gap lagi */
+    }
+
+    .slider-promo-left,
+    .slider-box-red {
+        min-height: 200px;
+        /* Tinggi minimum yang lebih rendah */
+        padding: 15px;
+        /* Kurangi padding lagi */
+    }
+
+    .promo-text-content h3 {
+        font-size: 1.3em;
+    }
+
+    .promo-text-content p {
+        font-size: 0.8em;
+    }
+
+    /* btn-primary-cta tidak ada definisi, mungkin maksudnya .btn-primary */
+    .btn-primary-cta {
+        padding: 8px 15px;
+        font-size: 0.8em;
+    }
+
+    .slider-box-red h3 {
+        font-size: 1.1em;
+    }
+
+    .slider-box-red ul li {
+        font-size: 0.8em;
+    }
+
+    .promo-grid-bottom {
+        flex-direction: column;
+        margin-top: 25px;
+        gap: 15px;
+    }
+
+    .promo-bottom-card {
+        min-height: 180px;
+        padding: 15px;
+    }
+
+
+    /* About Section Mobile */
+    .about .row {
+        /* KUNCI: Aktifkan penumpukan untuk mobile (2 Row) */
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        /* Berikan jarak yang cukup */
+        justify-content: center;
+        /* Tengahkankan item saat menumpuk */
+        overflow-x: hidden;
+        /* Pastikan tidak ada scroll horizontal */
+        padding: 0 20px;
+    }
+
+    .about-img,
+    .about .content {
+        /* Ambil hampir lebar penuh (90%) untuk memaksa turun ke baris baru */
+        flex: 0 0 90%;
+        max-width: 90%;
+        min-width: auto;
+        /* Hilangkan batasan min-width yang keras */
+        padding: 0;
+        margin: 0;
+    }
+
+    .about-img {
+        order: 0;
+        width: 60%;
+        /* Gambar selalu di atas */
+        text-align: center;
+        border: none;
+    }
+
+    .about .content {
+        order: 1;
+        /* Teks selalu di bawah */
+        font-size: 0.9rem;
+    }
+
+    .about .content h3 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    /* Jangkauan Section Mobile */
+    .coverage-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .coverage-grid .cek-form-container {
+        margin-top: 10px;
+    }
+
+    .cek-form-container {
+        position: sticky;
+        top: 100px;
+    }
+
+    /* Footer Mobile */
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Footer Mobile Kecil */
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 450px) {
+    html {
+        font-size: 75%;
+        /* Ukuran font global lebih kecil */
+    }
+
+    .hero-slider {
+        padding: 15px 3%;
+        /* Padding hero slider lebih kecil */
+    }
+
+    .slider-item.slider-slide {
+        gap: 5px;
+        /* Gap sangat kecil */
+    }
+
+    .slider-promo-left,
+    .slider-box-red {
+        min-height: 180px;
+        /* Tinggi minimum yang lebih rendah */
+        padding: 10px;
+        /* Padding sangat kecil */
+    }
+
+    .promo-text-content h3 {
+        font-size: 1.1em;
+    }
+
+    .promo-text-content p {
+        font-size: 0.7em;
+    }
+
+    /* btn-primary-cta tidak ada definisi, mungkin maksudnya .btn-primary */
+    .btn-primary-cta {
+        padding: 6px 12px;
+        font-size: 0.7em;
+    }
+
+    .slider-box-red h3 {
+        font-size: 0.9em;
+    }
+
+    .slider-box-red ul li {
+        font-size: 0.7em;
+        padding-left: 15px;
+    }
+
+    .slider-box-red ul li .icon-checkmark {
+        font-size: 0.9em;
+    }
+
+    .slider-box-red p {
+        font-size: 0.65em;
+    }
+
+    .slider-box-red .btn-secondary {
+        padding: 6px 12px;
+        font-size: 0.7em;
+    }
+
+    .promo-bottom-card {
+        min-height: 150px;
+        padding: 10px;
+    }
+
+    /* About Section Mobile Kecil */
+    .about h2 {
+        font-size: 1.8rem;
+    }
+
+    .about .row {
+        gap: 1rem;
+        padding: 0 15px;
+    }
+
+    .about-img img {
+        /* Pastikan gambar tidak terlalu besar */
+        max-width: 80%;
+    }
+
+    .about .content {
+        font-size: 0.8rem;
+        word-break: break-word;
+        /* Memastikan teks bisa di-wrap */
+    }
+
+    .about .content h3 {
+        font-size: 1.3rem;
+    }
+}

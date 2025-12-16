@@ -322,249 +322,380 @@ header {
 
 
 /* ======================== */
-/* 8. PROMO SECTION STYLING (FINAL DENGAN ANIMASI FIX) */
+/* 9. JANGKAUAN LAYANAN STYLING (FINAL, SEMANTIK, SATU KOLOM) */
 /* ======================== */
 
-/* 1. Definisi Keyframes untuk Animasi Berkedip */
-@keyframes promoPulse {
-  0% {
-    transform: scale(1);
-    color: white;
-  }
-
-  50% {
-    transform: scale(1.15);
-    /* Membesar */
-    color: #ff0000;
-    /* Merah */
-  }
-
-  100% {
-    transform: scale(1);
-    color: white;
-  }
-}
-
-/* Tambahkan vendor prefix untuk kompatibilitas yang lebih baik */
-@-webkit-keyframes promoPulse {
-  0% {
-    -webkit-transform: scale(1);
-    color: white;
-  }
-
-  50% {
-    -webkit-transform: scale(1.15);
-    color: #ff0000;
-  }
-
-  100% {
-    -webkit-transform: scale(1);
-    color: white;
-  }
-}
-
-
-.promo {
-  background: var(--primary-gradient);
-  color: white;
+/* Target utama menggunakan ID */
+#jangkauan {
+  background: #f7f7f7;
   text-align: center;
+  /* Hanya untuk judul H2 di atas card */
   padding: 3rem 7%;
 }
 
-.promo h2 {
-  color: white;
-  margin-bottom: 1.5rem;
 
-  /* PENTING: Set transform-origin sebelum animasi */
-  transform-origin: center;
-  -webkit-transform-origin: center;
-
-  /* Menerapkan Animasi Pulsating */
-  animation-name: promoPulse;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-
-  /* Vendor prefix untuk properti animasi */
-  -webkit-animation-name: promoPulse;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-timing-function: ease-in-out;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-}
-
-.promo h2::after {
-  background-color: white !important;
-}
-
-/* ... (Kode .promo .row dan .promo .content tidak berubah) ... */
-
-.promo .row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.promo .content {
-  flex: 1 1 400px;
-  background-color: rgba(255, 255, 255, 0.15);
-  padding: 1.5rem;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* ======================== */
-/* 9. KETENTUAN SECTION STYLING */
-/* ======================== */
-
-.ketentuan h2 {
+#jangkauan h2 {
   text-align: center;
-  color: var(--text-color-primary);
-  margin-bottom: 2rem;
-}
-
-.ketentuan .row {
-  display: flex;
-  justify-content: center;
-}
-
-.ketentuan .content {
-  max-width: 600px;
-  background-color: var(--bg-color-light);
-  padding: 2.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px var(--shadow-color);
-}
-
-.ketentuan .list {
-  list-style: none;
-}
-
-.ketentuan .list li {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
   position: relative;
-  padding-left: 25px;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
+  padding-bottom: 10px;
 }
 
-.ketentuan .list li::before {
-  content: '\2022';
-  color: var(--primary-blue);
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
+/* Garis bawah Judul Section (Gradient Biru) */
+#jangkauan h2::after {
+  content: '';
   position: absolute;
-  left: 0;
-  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--primary-gradient);
+  border-radius: 2px;
+}
+
+#jangkauan h2 span {
+  color: var(--primary-blue);
 }
 
 
-/* ======================== */
-/* 10. CONTACT SECTION STYLING */
-/* ======================== */
-
-.contact .row {
+/* Tata Letak Satu Kolom di Tengah */
+#jangkauan .row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
   justify-content: center;
+  /* Memposisikan konten di tengah */
+  flex-wrap: wrap;
+  gap: 0;
 }
 
-.contact-img {
-  flex: 1 1 350px;
-  text-align: center;
-}
+/* Gaya Card Tunggal */
+.content-single-column {
+  text-align: left;
+  /* SEMUA ISI DALAM KOTAK PUTIH AKAN RATA KIRI */
+  /* max-width: 700px; */
+  flex: 0 1 100%;
 
-.contact-img img {
-  max-width: 100%;
-  height: auto;
+  background-color: white;
+  /* LATAR BELAKANG CARD UTAMA PUTIH */
+
   border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
 }
 
-.contact .content {
-  flex: 1 1 450px;
-  background: var(--bg-color-light);
-  padding: 2.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px var(--shadow-color);
+/* --- STYLE JUDUL DAN INTRO --- */
+.content-detail .area-title,
+.content-detail .form-title {
+  color: var(--primary-blue);
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
-.contact .colmn {
+.content-detail .coverage-intro {
+  color: #444;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+/* --- DAFTAR LOKASI (LIST SCROLLABLE) --- */
+.coverage-list {
+  list-style: none;
+  padding: 0 15px;
+  margin: 15px 0;
+  max-height: 250px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  padding: 5px 15px;
+  border-radius: 5px;
+
+  /* LATAR BELAKANG GRADIENT SESUAI PERMINTAAN */
+  background: var(--primary-gradient);
+}
+
+.coverage-list li {
   display: flex;
   align-items: center;
-  margin-top: 1.5rem;
+  padding: 8px 0;
+
+  /* Garis bawah tipis dan terang agar terlihat di atas gradient */
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+
+  /* WARNA TEKS PUTIH AGAR JELAS DI ATAS LATAR BELAKANG GRADIENT */
+  color: white;
+
+  font-size: 0.95rem;
 }
 
-.contact .colmn i {
-  color: var(--primary-blue);
-  width: 28px;
-  height: 28px;
-  margin-right: 15px;
-  stroke-width: 2.5;
+.coverage-list li:last-child {
+  border-bottom: none;
 }
 
-.contact .content h3 {
-  font-size: 1.4rem;
-  color: var(--secondary-color);
-}
-
-.contact .content p {
-  margin-left: 43px;
+/* Style Ceklis */
+.list-checkmark {
+  color: #aaffaa;
+  /* Ceklis juga putih */
+  font-weight: bold;
   font-size: 1.1rem;
-  margin-bottom: 1.5rem;
+  margin-right: 10px;
+  line-height: 1;
 }
 
-/* ======================== */
-/* 11. FOOTER STYLING */
-/* ======================== */
+/* --- FORM DAN TOMBOL --- */
+.cek-form-container {
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.content-single-column input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.btn-gradient {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: var(--primary-gradient);
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+}
+
+
+/* GRID 2 KOLOM UNTUK DESKTOP */
+.coverage-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  margin-top: 20px;
+  align-items: start;
+}
+
+/* Form kanan lebih "card-like" */
+.coverage-grid .cek-form-container {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* MOBILE: KEMBALI 1 KOLOM */
+@media (max-width: 768px) {
+  .coverage-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .coverage-grid .cek-form-container {
+    margin-top: 10px;
+  }
+
+  .cek-form-container {
+    position: sticky;
+    top: 100px;
+  }
+}
+
+/* SECTION UTAMA */
+.promo-section {
+  background: var(--primary-gradient);
+  margin-top: 2em;
+  /* biru solid seperti gambar */
+  /* padding: 80px 7%; */
+}
+
+/* CONTAINER */
+.promo-container {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+/* GAMBAR */
+.promo-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* KONTEN */
+.promo-content {
+  color: #ffffff;
+}
+
+.promo-content h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.promo-content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* BUTTON PUTIH */
+.btn-white {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 28px;
+  background: #ffffff;
+  color: #1b5f8a;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-white:hover {
+  background: #f1f1f1;
+  transform: translateY(-2px);
+}
+
+.promo-section::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: white;
+  border-bottom-left-radius: 50% 100%;
+  border-bottom-right-radius: 50% 100%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .promo-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .promo-content {
+    text-align: left;
+  }
+}
 
 .footer {
-  background-color: var(--text-color-primary);
-  padding: 1.5rem 7%;
-  color: white;
+  background: var(--primary-gradient);
+  margin-top: 2em;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  position: relative;
 }
 
-.footer .rowFoot {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+.footer-container {
   max-width: 1200px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
 }
 
-.footer .footCopy p {
-  font-size: 0.9rem;
-  margin: 0;
+.footer-col h4 {
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 16px;
 }
 
-.footer .footWa {
-  margin-top: 10px;
+.footer-col p,
+.footer-col ul {
+  font-size: 14px;
+  line-height: 1.6;
 }
 
-.footer .linkWa {
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-badge {
+  margin-top: 15px;
   display: flex;
   align-items: center;
-  color: white;
-  font-weight: 600;
+  gap: 10px;
+}
+
+.footer-badge img {
+  width: 40px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* WhatsApp floating button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
   background-color: #25d366;
-  padding: 8px 15px;
+  color: white;
+  padding: 10px 15px;
   border-radius: 50px;
-  transition: background-color 0.3s;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: background-color 0.3s ease;
 }
 
-.footer .linkWa:hover {
-  background-color: #128c7e;
+.whatsapp-float:hover {
+  background-color: #1ebe57;
 }
 
-.footer .iconWa {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
+.whatsapp-float img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ======================== */
